@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Book claim review — design demo</title>
+<style>
+:root{
+  --bg:#f5f7f9; --card:#fff; --ink:#15242e; --muted:#5d7080; --line:#dde5ea;
+  --accent:#0f6e4f; --accent-ink:#fff; --warn:#8a5a00; --warn-bg:#fff6e0;
+  --bad:#9b2226; --bad-bg:#fdecec; --ok:#0f6e4f; --ok-bg:#e8f5ef;
+  --p1:#9b2226; --p2:#b5651d; --p3:#456; --p4:#8a97a1;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{background:#15242e;color:#fff;padding:18px 20px}
+header h1{margin:0 0 4px;font-size:19px;letter-spacing:.2px}
+header p{margin:0;color:#b9c7d1;font-size:13px}
+.banner{background:var(--warn-bg);border-bottom:1px solid #f0dfae;color:var(--warn);
+  padding:10px 20px;font-size:13px}
+.wrap{max-width:1180px;margin:0 auto;padding:16px 20px 80px}
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0;
+  border-bottom:1px solid var(--line);margin-bottom:14px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+select,input[type=text],input[type=search]{padding:7px 9px;border:1px solid var(--line);
+  border-radius:7px;background:#fff;font:inherit;color:inherit}
+input[type=search]{flex:1;min-width:200px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;
+  font-size:12.5px;cursor:pointer;user-select:none}
+.chip.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.stat{font-size:12.5px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:13px 15px;margin-bottom:10px}
+.card .meta{font-size:11.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;
+  align-items:center;margin-bottom:7px}
+.pri{font-weight:700;letter-spacing:.3px}
+.jump{color:var(--accent);text-decoration:none;font-weight:600}
+.jump:hover{text-decoration:underline}
+.toplinks{font-size:13px}
+.toplinks a{color:#b9c7d1;text-decoration:none;margin-right:14px}
+.toplinks a:hover{color:#fff}
+.p1{color:var(--p1)} .p2{color:var(--p2)} .p3{color:var(--p3)} .p4{color:var(--p4)}
+.sent{font-size:15.5px;line-height:1.6;margin:0 0 9px}
+.kinds{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px}
+.kind{font-size:11px;background:#eef3f6;border:1px solid var(--line);border-radius:5px;
+  padding:2px 7px;color:#3b5060}
+.why{font-size:12px;color:var(--muted);margin:0 0 9px}
+.eng{border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin:0 0 10px;background:#f2f6f8}
+.eng h4{margin:0 0 6px;font-size:11px;letter-spacing:.3px;text-transform:uppercase;color:var(--muted)}
+.eng .row2{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:13px}
+.eng .who{font-weight:700;min-width:58px}
+.eng .vd{font-weight:600}
+.eng .src{color:var(--muted);font-size:12px}
+.eng .triagebad{display:inline-block;margin-top:5px;font-size:12.5px;color:var(--warn);
+  background:var(--warn-bg);border:1px solid #d9a441;border-radius:6px;padding:5px 8px}
+.eng .flagbad{display:inline-block;margin-top:5px;font-size:12.5px;color:var(--bad);
+  background:var(--bad-bg);border:1px solid #e2a0a2;border-radius:6px;padding:5px 8px}
+.eng.split{border-color:#b5651d;background:var(--warn-bg)}
+.eng.split h4{color:var(--warn)}
+.prior{border:1px solid #9fc3d6;background:#eef6fa;border-radius:8px;padding:11px 13px;margin:0 0 10px}
+.prior h4{margin:0 0 6px;font-size:12.5px;color:#1e5a7a;letter-spacing:.3px;text-transform:uppercase}
+.prior .lede{margin:0 0 9px;font-size:13.5px;line-height:1.55}
+.prior .q{margin:0 0 8px;font-size:13px;line-height:1.55;background:var(--card);border:1px solid var(--line);
+  border-radius:6px;padding:8px 10px}
+.prior .q b{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.3px;color:var(--muted);margin-bottom:3px}
+.prior .q i{color:var(--muted);font-style:normal;font-weight:600}
+.prior .caveat{margin:0;font-size:12.5px;color:#4a6076;line-height:1.5}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .prior{background:#11242e;border-color:#2b4d60}
+ :root:not([data-theme=light]) .prior h4{color:#8ec3de} :root:not([data-theme=light]) .prior .caveat{color:#9ab6c6}}
+.corr{border:1px solid #e2a0a2;background:var(--bad-bg);border-radius:8px;padding:10px 12px;margin:0 0 10px}
+.corr h4{margin:0 0 5px;font-size:12.5px;color:var(--bad);letter-spacing:.3px;text-transform:uppercase}
+.corr p{margin:0 0 7px;font-size:13.5px}
+.corr .rep{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:9px 10px;
+  font-size:13.5px;line-height:1.55}
+.corr .prov{font-size:12px;color:var(--muted);margin:-2px 0 8px}
+.corr .prov a{color:var(--bad);font-weight:600}
+.corr .rep b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.3px;
+  color:var(--muted);margin-bottom:4px}
+.card.known{border-color:#e2a0a2;border-left-width:4px}
+.verdicts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.v{border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 10px;
+  font-size:12.5px;cursor:pointer}
+.v:hover{border-color:#9fb3c0}
+.v.sel[data-v=ok]{background:var(--ok-bg);border-color:var(--ok);color:var(--ok);font-weight:600}
+.v.sel[data-v=source]{background:var(--warn-bg);border-color:#d9a441;color:var(--warn);font-weight:600}
+.v.sel[data-v=disputed]{background:var(--bad-bg);border-color:var(--bad);color:var(--bad);font-weight:600}
+.v.sel[data-v=rewrite]{background:#eef0fb;border-color:#3f4fa8;color:#3f4fa8;font-weight:600}
+.v.sel[data-v=misleading]{background:var(--warn-bg);border-color:#b5651d;color:#8a5a00;font-weight:600}
+.v.sel[data-v=preclinical]{background:#eef3f6;border-color:#4f7a8a;color:#2f5a6a;font-weight:600}
+.v.sel[data-v=population]{background:#eef3f6;border-color:#4f7a8a;color:#2f5a6a;font-weight:600}
+.v.sel[data-v=notclaim]{background:#eef3f6;border-color:#7d8f9c;color:#48606f;font-weight:600}
+.notes{display:none;gap:6px;flex-direction:column}
+.notes.show{display:flex}
+.notes textarea,.notes input{width:100%;padding:7px 9px;border:1px solid var(--line);
+  border-radius:7px;font:inherit}
+.notes textarea{min-height:56px;resize:vertical}
+mark{background:#fff2b2;padding:0 1px}
+.pager{display:flex;gap:8px;align-items:center;justify-content:center;margin:18px 0}
+button.pg{border:1px solid var(--line);background:#fff;border-radius:7px;padding:7px 13px;
+  font:inherit;cursor:pointer}
+button.pg[disabled]{opacity:.45;cursor:default}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#15242e;color:#fff;
+  padding:9px 20px;font-size:13px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.bar button{border:1px solid #3c5364;background:#1d3241;color:#fff;border-radius:7px;
+  padding:6px 11px;font:inherit;cursor:pointer}
+.bar .sp{flex:1}
+@media (max-width:640px){.wrap{padding:12px 16px 96px}.sent{font-size:15px}}
+@media (prefers-color-scheme:dark){
+ :root:not([data-theme=light]){--bg:#101a21;--card:#16232c;--ink:#e6eef3;--muted:#93a7b4;
+   --line:#273a46;--ok-bg:#12302a;--warn-bg:#33270f;--bad-bg:#3a1a1c;}
+ :root:not([data-theme=light]) select,:root:not([data-theme=light]) input,
+ :root:not([data-theme=light]) textarea,:root:not([data-theme=light]) .chip,
+ :root:not([data-theme=light]) .v,:root:not([data-theme=light]) button.pg{background:#16232c;color:#e6eef3}
+ :root:not([data-theme=light]) .kind{background:#1d2e39;color:#b7cad6}
+ :root:not([data-theme=light]) mark{background:#5a4a12;color:#fff5cc}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Book claim review — <em>design demo</em></h1>
+  <p>Synthetic data · every sentence, flagged by claim type · 5,095 sentences from 1,970 paragraphs</p>
+  <p class="toplinks" style="margin-top:7px">
+    </p>
+</header>
+<div class="banner">
+  🎨 DESIGN DEMO — every sentence below is INVENTED placeholder text. No real manuscript content, no real medical claims, no real citations. Source file
+  <code>SYNTHETIC-DEMO-DATA.docx</code> (synthetic demo data). Verdicts are stored in this browser only —
+  export before you close the tab.
+</div>
+<div class="wrap">
+  <div class="controls">
+    <div class="row">
+      <select id="chapter"><option value="">All chapters</option></select>
+      <select id="status">
+        <option value="">Any status</option>
+        <option value="none">Not reviewed</option>
+        <option value="engine">Engine flagged it (not ok)</option>
+        <option value="split">Engines disagree</option>
+        <option value="ok">Verified</option>
+        <option value="source">Needs source</option>
+        <option value="disputed">Disputed</option>
+        <option value="misleading">True but misleading</option>
+        <option value="preclinical">Animals / lab only</option>
+        <option value="population">Wrong patients</option>
+        <option value="rewrite">Rewrite</option>
+        <option value="notclaim">Not a claim</option>
+      </select>
+      <input type="search" id="q" placeholder="Search the text (e.g. curcumin, 500 mg, FDA)">
+    </div>
+    <div class="row" id="prio"></div>
+    <div class="row" id="kinds"></div>
+    <div class="row"><span class="stat" id="stat"></span></div>
+  </div>
+  <div id="list"></div>
+  <div class="pager">
+    <button class="pg" id="prev">← Previous</button>
+    <span class="stat" id="page"></span>
+    <button class="pg" id="next">Next →</button>
+  </div>
+</div>
+<div class="bar">
+  <span>Reviewer: <input type="text" id="who" placeholder="your name" style="width:130px"></span>
+  <span id="progress"></span>
+  <span class="sp"></span>
+  <button id="exportJson">Export JSON</button>
+  <button id="exportCsv">Export CSV</button>
+  <button id="importBtn">Import</button>
+  <input type="file" id="importFile" accept="application/json" style="display:none">
+</div>
+<script>
+const PER = 50;
+const KINDS = ['wci-prior','known-error','unit-error','dose','product','protocol','insteadof','anecdote','regulatory','statistic','outcome','safety','study','advice','mechanism','adjacent','firstperson','narrative'];
+const KIND_LABEL = {'wci-prior':'WCI already reviewed this topic', 'known-error':'known error', 'unit-error':'arithmetic error', dose:'dose', product:'named drug', protocol:'drug cocktail',
+  insteadof:'instead of standard care', anecdote:'patient outcome', regulatory:'regulatory',
+  statistic:'number', outcome:'result', safety:'safety', study:'research', advice:'advice',
+  mechanism:'mechanism', adjacent:'next to a P1 claim', firstperson:'own experience',
+  narrative:'narrative'};
+const PLAIN_V = {SUPPORTED:'held up', PARTLY:'held up only in part', UNSUPPORTED:'were not supported',
+  CONTRADICTED:'were contradicted', 'WCI-RECORD':'needed WCI\u2019s own records', POLICY:'were policy choices'};
+const VERDICT_LABEL = {ok:'Verified', source:'Needs source', disputed:'Disputed',
+  misleading:'True but misleading', preclinical:'Animals / lab only',
+  population:'Wrong patients', rewrite:'Rewrite', notclaim:'Not a claim'};
+let CLAIMS = [], HREF = {}, view = [], page = 0;
+const KEY = 'wci-book-review-v1';
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+function persist(){ try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){} }
+
+const state = {chapter:'', status:'', q:'', prio:new Set([1,2]), kinds:new Set()};
+
+function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+// Every identifier becomes a real link: a reviewer should never have to retype a
+// PMID to check a citation. PubMed for PMIDs, doi.org for DOIs, clinicaltrials.gov
+// for NCT ids, and bare URLs as themselves.
+function linkify(s){
+  let out = esc(s);
+  out = out.replace(/\b(https?:\/\/[^\s<>"')\]]+)/g,
+    '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  out = out.replace(/\bPMID[:\s]*(\d{6,9})\b/gi,
+    '<a href="https://pubmed.ncbi.nlm.nih.gov/$1/" target="_blank" rel="noopener">PMID $1</a>');
+  out = out.replace(/(?<!["=\/])\b(10\.\d{4,9}\/[^\s<>,;)\]]+)/g,
+    '<a href="https://doi.org/$1" target="_blank" rel="noopener">$1</a>');
+  out = out.replace(/\b(NCT\d{8})\b/g,
+    '<a href="https://clinicaltrials.gov/study/$1" target="_blank" rel="noopener">$1</a>');
+  return out;
+}
+function hl(s, q){
+  if(!q) return esc(s);
+  try { return esc(s).replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig'), '<mark>$1</mark>'); }
+  catch(e){ return esc(s); }
+}
+function shortChapter(c){ return c.replace(/^(CHAPTER|Chapter)\s*(\d+)\s*/, 'Ch $2 · ').slice(0,60); }
+
+function filtered(){
+  const q = state.q.toLowerCase();
+  return CLAIMS.filter(c => {
+    if(state.chapter && c.chapter !== state.chapter) return false;
+    if(state.prio.size && !state.prio.has(c.priority)) return false;
+    if(state.kinds.size){
+      const ks = (c.kinds.length ? c.kinds : ['narrative']).concat(c.wci_prior ? ['wci-prior'] : []);
+      if(![...state.kinds].some(k => ks.includes(k))) return false;
+    }
+    if(state.status === 'engine'){
+      const e = c.engines || {};
+      if(!Object.values(e).some(x => x.verdict !== 'ok' && x.verdict !== 'notclaim')) return false;
+    } else if(state.status === 'split'){
+      if(!c.engines_split) return false;
+    } else if(state.status){
+      const v = (saved[c.id]||{}).verdict || 'none';
+      if(v !== state.status) return false;
+    }
+    if(q && !c.text.toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function render(){
+  view = filtered();
+  if(page * PER >= view.length) page = 0;
+  const slice = view.slice(page*PER, page*PER + PER);
+  const list = document.getElementById('list');
+  list.innerHTML = slice.map(c => {
+    const rec = saved[c.id] || {};
+    const ks = (c.kinds.length ? c.kinds : ['narrative']);
+    return `<div class="card ${c.correction?'known':''}" data-id="${c.id}">
+      <div class="meta">
+        <span class="pri p${c.priority}">P${c.priority}</span>
+        <span>${esc(shortChapter(c.chapter))}</span>
+        ${c.section ? `<span>› ${esc(c.section.slice(0,50))}</span>` : ''}
+        <span>¶${c.para}</span><span>${c.id}</span>
+        ${HREF[c.id] ? `<a class="jump" href="${HREF[c.id]}" target="_blank" rel="noopener">read in the book ↗</a>` : ''}
+      </div>
+      <p class="sent">${hl(c.text, state.q)}</p>
+      <div class="kinds">${ks.map(k => `<span class="kind">${KIND_LABEL[k]||k}</span>`).join('')}</div>
+      ${c.why.length ? `<p class="why">Flagged because it ${c.why.join('; it ')}.</p>` : ''}
+      ${c.unit_error ? `<div class="corr"><h4>Arithmetic error — checkable with no source</h4>
+        <p>${esc(c.unit_error.note)}</p></div>` : ''}
+      ${c.wci_prior?`<div class="prior">
+        <h4>WCI has already looked at this topic — ${esc(c.wci_prior.topic)}</h4>
+        <p class="lede">When WCI reviewed its own website it worked through
+          <b>${c.wci_prior.topic_claims} claim${c.wci_prior.topic_claims==1?'':'s'}</b> on this topic
+          (${Object.entries(c.wci_prior.topic_spread).map(([k,v])=>`${v} ${PLAIN_V[k]||k.toLowerCase()}`).join(', ')}).
+          The one closest to this sentence, <code>${esc(c.wci_prior.register_id)}</code>, <b>${esc(c.wci_prior.headline)}</b> — ${esc(c.wci_prior.plain)}</p>
+        ${c.wci_prior.wci_wording?`<p class="q"><b>What the website says</b>${esc(c.wci_prior.wci_wording)}</p>`:''}
+        ${c.wci_prior.why?`<p class="q"><b>Why WCI reached that</b>${linkify(c.wci_prior.why)}</p>`:''}
+        ${c.wci_prior.rewrite?`<p class="q"><b>The wording WCI proposed instead</b>${esc(c.wci_prior.rewrite)}</p>`:''}
+        ${(c.wci_prior.sources||[]).map(s=>`<p class="q"><b>Evidence behind it</b>${esc(s.cite)}${s.pmid?` <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(s.pmid)}/" target="_blank" rel="noopener">PubMed ${esc(s.pmid)}</a>`:''}${s.doi?` · <a href="https://doi.org/${esc(s.doi)}" target="_blank" rel="noopener">${esc(s.doi)}</a>`:''}${s.design?`<br><i>What kind of study:</i> ${esc(s.design)}`:''}${s.shows?`<br><i>What it actually showed:</i> ${esc(s.shows)}`:''}</p>`).join('')}
+        <p class="caveat">⚠️ Background, not a verdict on this sentence. This is what WCI concluded about the same
+          topic <b>for its website</b> — different wording, different audience. A claim can be fine on a web page
+          and wrong in a book, and the reverse. Use it so nobody re-decides what the team already settled.</p>
+      </div>`:''}
+      ${c.engines ? `<div class="eng ${c.engines_split?'split':''}">
+        <h4>${c.engines_split ? 'Engines disagree — read this one yourself' : 'Engine review (evidence, not a decision)'}</h4>
+        ${Object.entries(c.engines).map(([name,e]) => `<div class="row2">
+          <span class="who">${esc(name)}</span>
+          <span><span class="vd">${esc(VERDICT_LABEL[e.verdict]||e.verdict)}</span>${e.confidence?` <span class="src">(${esc(e.confidence)} confidence)</span>`:''}<br>${linkify(e.why)}${e.source?`<br><span class="src">${linkify(e.source)}</span>`:''}${e.triage?`<br><span class="triagebad">⚑ ${esc(e.triage.label)} (source triage, ${esc(e.triage.by)}): ${esc(e.triage.note)} — PMID ${esc(e.triage.pmid)}</span>`:''}${e.source_flag?`<br><span class="flagbad">${esc(e.source_flag)}</span>`:''}${(e.resolved||[]).map(r=>`<br><span class="src">✓ <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(r.pmid)}/" target="_blank" rel="noopener">PMID ${esc(r.pmid)}</a> resolves: <i>${esc(r.title)}</i> — ${esc(r.journal)} ${esc(r.year)}</span>`).join('')}</span>
+        </div>`).join('')}
+      </div>` : ''}
+      ${c.correction ? `<div class="corr">
+        <h4>Known error #${c.correction.n} · ${esc(c.correction.severity)} · ${esc(c.correction.label)}</h4>
+        <p class="prov">From the author's own corrections sheet — in the real tool this links to that document.</p>
+        <p>${linkify(c.correction.problem)}</p>
+        <div class="rep"><b>Suggested replacement</b>${esc(c.correction.replacement)}</div>
+        ${c.correction.alternative ? `<p class="why" style="margin-top:7px">${esc(c.correction.alternative)}</p>` : ''}
+      </div>` : ''}
+      <div class="verdicts">
+        ${[['ok','Verified'],['source','Needs source'],['disputed','Disputed'],
+           ['misleading','True but misleading'],['preclinical','Animals / lab only'],
+           ['population','Wrong patients'],['rewrite','Rewrite'],['notclaim','Not a claim']].map(([v,label]) =>
+          `<button class="v ${rec.verdict===v?'sel':''}" data-v="${v}">${label}</button>`).join('')}
+      </div>
+      <div class="notes ${rec.verdict && rec.verdict!=='notclaim' ? 'show':''}">
+        <input type="text" class="src" placeholder="Source (PMID, DOI, URL) or existing claim id" value="${esc(rec.source||'')}">
+        <textarea class="note" placeholder="What is wrong, or what it should say instead">${esc(rec.note||'')}</textarea>
+      </div>
+    </div>`;
+  }).join('') || '<p class="stat">Nothing matches these filters.</p>';
+
+  document.getElementById('stat').textContent =
+    `${view.length} of ${CLAIMS.length} sentences match`;
+  document.getElementById('page').textContent =
+    view.length ? `${page*PER+1}–${Math.min((page+1)*PER, view.length)}` : '0';
+  document.getElementById('prev').disabled = page === 0;
+  document.getElementById('next').disabled = (page+1)*PER >= view.length;
+  const done = Object.values(saved).filter(r => r.verdict).length;
+  const p1 = CLAIMS.filter(c => c.priority===1).length;
+  const p1done = CLAIMS.filter(c => c.priority===1 && (saved[c.id]||{}).verdict).length;
+  document.getElementById('progress').textContent =
+    `${done} reviewed · P1 ${p1done}/${p1}`;
+}
+
+document.getElementById('list').addEventListener('click', e => {
+  const btn = e.target.closest('.v'); if(!btn) return;
+  const card = btn.closest('.card'), id = card.dataset.id, v = btn.dataset.v;
+  const rec = saved[id] || (saved[id] = {});
+  rec.verdict = rec.verdict === v ? '' : v;
+  rec.at = new Date().toISOString();
+  rec.by = document.getElementById('who').value || '';
+  persist();
+  card.querySelectorAll('.v').forEach(b => b.classList.toggle('sel', b.dataset.v === rec.verdict));
+  card.querySelector('.notes').classList.toggle('show', !!rec.verdict && rec.verdict !== 'notclaim');
+  render();
+});
+document.getElementById('list').addEventListener('input', e => {
+  const card = e.target.closest('.card'); if(!card) return;
+  const rec = saved[card.dataset.id] || (saved[card.dataset.id] = {});
+  if(e.target.classList.contains('note')) rec.note = e.target.value;
+  if(e.target.classList.contains('src')) rec.source = e.target.value;
+  rec.by = document.getElementById('who').value || rec.by || '';
+  persist();
+});
+
+function mkChips(el, items, set, labelFn){
+  el.innerHTML = items.map(i =>
+    `<span class="chip ${set.has(i)?'on':''}" data-v="${i}">${labelFn(i)}</span>`).join('');
+  el.addEventListener('click', e => {
+    const c = e.target.closest('.chip'); if(!c) return;
+    let v = c.dataset.v; if(!isNaN(parseInt(v)) && el.id === 'prio') v = parseInt(v);
+    set.has(v) ? set.delete(v) : set.add(v);
+    c.classList.toggle('on'); page = 0; render();
+  });
+}
+
+function dl(name, text, type){
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], {type}));
+  a.download = name; a.click();
+}
+document.getElementById('exportJson').onclick = () => {
+  const out = CLAIMS.filter(c => saved[c.id] && saved[c.id].verdict).map(c =>
+    Object.assign({id:c.id, chapter:c.chapter, section:c.section, para:c.para,
+      priority:c.priority, kinds:c.kinds, text:c.text}, saved[c.id]));
+  dl('book-review-verdicts.json', JSON.stringify({exported:new Date().toISOString(),
+    reviewer:document.getElementById('who').value, count:out.length, verdicts:out}, null, 1),
+    'application/json');
+};
+document.getElementById('exportCsv').onclick = () => {
+  const q = s => '"' + String(s==null?'':s).replace(/"/g,'""') + '"';
+  const rows = [['id','priority','chapter','section','para','kinds','verdict','source','note','by','at','text']];
+  CLAIMS.forEach(c => { const r = saved[c.id]; if(!r || !r.verdict) return;
+    rows.push([c.id,c.priority,c.chapter,c.section,c.para,c.kinds.join('|'),
+      r.verdict,r.source||'',r.note||'',r.by||'',r.at||'',c.text]); });
+  dl('book-review-verdicts.csv', rows.map(r => r.map(q).join(',')).join('\n'), 'text/csv');
+};
+document.getElementById('importBtn').onclick = () => document.getElementById('importFile').click();
+document.getElementById('importFile').onchange = e => {
+  const f = e.target.files[0]; if(!f) return;
+  const rd = new FileReader();
+  rd.onload = () => { try {
+      const d = JSON.parse(rd.result);
+      (d.verdicts || []).forEach(v => { saved[v.id] = {verdict:v.verdict, note:v.note,
+        source:v.source, by:v.by, at:v.at}; });
+      persist(); render();
+    } catch(err){ alert('Could not read that file: ' + err.message); } };
+  rd.readAsText(f);
+};
+document.getElementById('prev').onclick = () => { page--; render(); window.scrollTo(0,0); };
+document.getElementById('next').onclick = () => { page++; render(); window.scrollTo(0,0); };
+['chapter','status'].forEach(id => document.getElementById(id).onchange = e => {
+  state[id] = e.target.value; page = 0; render(); });
+document.getElementById('q').oninput = e => { state.q = e.target.value; page = 0; render(); };
+const who = document.getElementById('who');
+who.value = localStorage.getItem(KEY + '-who') || '';
+who.oninput = () => localStorage.setItem(KEY + '-who', who.value);
+
+fetch('claims.json').then(r => r.json()).then(d => {
+  CLAIMS = d.claims; HREF = d.href || {};
+  const sel = document.getElementById('chapter');
+  [...new Set(CLAIMS.map(c => c.chapter))].forEach(c => {
+    const o = document.createElement('option'); o.value = c; o.textContent = shortChapter(c);
+    sel.appendChild(o); });
+  mkChips(document.getElementById('prio'), [1,2,3,4], state.prio,
+    p => ({1:'P1 doses & approval',2:'P2 results & research',3:'P3 mechanism',4:'P4 narrative'})[p]);
+  mkChips(document.getElementById('kinds'), KINDS, state.kinds, k => KIND_LABEL[k]);
+  render();
+});
+</script>
+</body>
+</html>
