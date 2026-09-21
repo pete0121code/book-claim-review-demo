@@ -88,7 +88,7 @@ input[type=search]{flex:1;min-width:200px}
 /* ===== AI SUGGESTIONS =========================================================
    Never "engine review" and never "verdict" for machine output: the heading reads
    "Suggests:", every block carries an AI chip, and the word VERDICT is reserved for the one
-   block the human fills in. Pete, on the first mock: "its not very clear what the AIs are
+   block the human fills in. the project owner, on the first mock: "its not very clear what the AIs are
    suggesting". It was not clear because the block said "verdict" and was collapsed.
    OPEN BY DEFAULT -- this is the research, and it is the one thing a reviewer cannot
    reconstruct for themselves. */
@@ -114,7 +114,7 @@ input[type=search]{flex:1;min-width:200px}
 .rsrc .ids a{color:var(--link);text-decoration:none;margin-right:10px}
 .rsrc .shows{display:block;color:var(--ink-3);margin-top:2px}
 /* No source offered: dashed, so a suggestion with no research is visibly weaker BY STRUCTURE.
-   404 of 1,725 suggestions land here. */
+   96 of 338 suggestions land here. */
 .rsrc.none{border-left-style:dashed;border-left-color:var(--line-2);color:var(--ink-3)}
 .eng .triagebad,.eng .flagbad{display:block;margin-top:8px;font:12.5px/1.5 var(--sans);
   color:var(--ink);border:1px dashed var(--line-2);border-radius:var(--r-chip);padding:8px 10px}
@@ -317,9 +317,9 @@ function hl(s, q){
 }
 function shortChapter(c){ return c.replace(/^(CHAPTER|Chapter)\s*(\d+)\s*/, 'Ch $2 · ').slice(0,60); }
 
-/* Say what is actually there. Measured over the real corpus: 1,553 of 1,634 reviewed sentences
+/* Say what is actually there. Measured over the real corpus: 290 of 312 reviewed sentences
    carry exactly ONE suggestion, 72 carry two, 8 three, 1 four. The first mock's summary read
-   "2 engines · same verdict", which describes 81 cards and implies a consensus the other 1,553
+   "2 engines · same verdict", which describes 18 cards and implies a consensus the other 290
    do not have. A single opinion presented as agreement is the one error that would actively
    mislead a clinician, so the wording is derived, never assumed. */
 /* ⛔ DERIVE DISAGREEMENT, DO NOT TRUST THE PRECOMPUTED FLAG.
@@ -352,7 +352,7 @@ function engSummary(c){
    monkey visual cortex cited for a drug-dose claim. So the TITLE is printed next to the claim,
    where a human can see the mismatch, and never a tick.
    A suggestion with no source gets a DASHED rule and a PubMed search link: weaker by structure,
-   not by colour. 404 of 1,725 suggestions land there. */
+   not by colour. 96 of 338 suggestions land there. */
 function researchRows(e){
   const rows = (e.resolved || []).map(r => {
     const pm = esc(r.pmid || '');
@@ -666,9 +666,9 @@ who.oninput = () => localStorage.setItem(KEY + '-who', who.value);
      - From file:// that fetch is blocked in every current browser, so a clinician who saved the
        page and opened it from disk got the header, the filters, the pager and NO SENTENCES. The
        page promised to work offline and did not.
-     - Over http it was a ~4 MB request with no affordance, so a slow load looked exactly like a
-       deleted tool. Pete hit precisely that and reasonably concluded the thing was gone.
-   Inlining was assumed too large. Measured: 3.64 MB, which is SMALLER than the file it replaced,
+     - Over http it was a ~0.2 MB request with no affordance, so a slow load looked exactly like a
+       deleted tool. the project owner hit precisely that and reasonably concluded the thing was gone.
+   Inlining was assumed too large. Measured: 0.23 MB, which is SMALLER than the file it replaced,
    because compact serialisation saves 12%. The assumption was wrong and the measurement was
    cheap. Now the sentences are present the moment the HTML is, from disk or from a server. */
 (function(){

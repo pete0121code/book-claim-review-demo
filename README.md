@@ -7,7 +7,7 @@ one, every sentence in it is invented.
 ## What the real tool does
 
 A physician has to work through a book-length manuscript and decide, claim by claim,
-what is safe to print. The real register holds **5,095 sentences**; **1,634** carry a
+what is safe to print. The real register holds **454 sentences**; **312** carry a
 verdict from one or more automated reviewers. The tool's job is to make that survivable:
 find the claims that matter, show the evidence beside each one, and record a decision.
 
@@ -28,7 +28,7 @@ afternoon is exactly what it asks for.
 - **Density** — a single card can carry six stacked blocks. Everything on it earns its
   place, but the hierarchy is flat: a fabricated-citation warning looks much like a
   routine note.
-- **Progress and orientation** — a reviewer has no sense of where they are in 1,634
+- **Progress and orientation** — a reviewer has no sense of where they are in 312
   claims, what they have done, or what remains. The footer shows a bare count.
 - **The verdict row** — eight buttons of equal weight. The common choices and the rare,
   consequential ones are indistinguishable.
@@ -89,5 +89,5 @@ emit the HTML and hold the CSS. Editing a generated `.html` alone would be wiped
   hostnames; 0 real citation identifiers. The check runs with a positive control, so a silently
   broken scan cannot pass.
 
-The real tool is password-gated and the manuscript is unpublished. That is why you get this instead
+The real tool is password-gated and the manuscript is in-progress. That is why you get this instead
 of the live URL — the design work needs the templates, not the text.
