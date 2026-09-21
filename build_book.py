@@ -126,7 +126,7 @@ def main():
 <title>%s — Sample Manuscript</title><style>%s</style></head><body>
 <header><a href="index.html">← All chapters</a> · <a href="../index.html">Claim review</a>
 <h1>%s</h1></header>
-<div class="banner">Unpublished manuscript. Internal review only — not published, not indexed,
+<div class="banner">Sample manuscript. Every sentence here is invented for design work —
 not medical advice.</div>
 <div class="wrap">
 <h2 class="chap">%s</h2>
@@ -156,7 +156,7 @@ Every sentence has its own link — copy the address after clicking one.</p>
 <meta name="robots" content="noindex, nofollow">
 <title>Sample Manuscript — manuscript</title><style>%s</style></head><body>
 <header><a href="../index.html">← Claim review</a><h1>Sample Manuscript — the manuscript</h1></header>
-<div class="banner">Unpublished manuscript. Internal review only — not published, not indexed,
+<div class="banner">Sample manuscript. Every sentence here is invented for design work —
 not medical advice. Source file <code>%s</code> (md5 <code>%s</code>).</div>
 <div class="wrap"><nav class="toc">%s</nav>
 <p class="legend">%s sentences across %d chapters. Every sentence is individually

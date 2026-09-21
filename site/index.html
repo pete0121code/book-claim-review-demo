@@ -303,11 +303,11 @@ function hl(s, q){
 }
 function shortChapter(c){ return c.replace(/^(CHAPTER|Chapter)\s*(\d+)\s*/, 'Ch $2 · ').slice(0,60); }
 
-/* Say what is actually there. Measured over the real corpus: 290 of 312 reviewed sentences
-   carry exactly ONE suggestion, 72 carry two, 8 three, 1 four. The first mock's summary read
-   "2 engines · same verdict", which describes 18 cards and implies a consensus the other 290
-   do not have. A single opinion presented as agreement is the one error that would actively
-   mislead a clinician, so the wording is derived, never assumed. */
+/* Say what is actually there. Most reviewed sentences carry exactly ONE suggestion; only a
+   minority carry two or more. The first mock's summary read "2 engines · same verdict", which
+   describes a small subset and implies a consensus the majority do not have. A single opinion
+   presented as agreement is the one error that would actively mislead a clinician, so the
+   wording is derived from the data on each card, never assumed. */
 /* ⛔ DERIVE DISAGREEMENT, DO NOT TRUST THE PRECOMPUTED FLAG.
    Measured 2026-09-20: 81 sentences carry more than one suggestion, 41 of those have genuinely
    DIFFERENT verdicts, and only 21 were flagged `engines_split`. So 20 cards would have told a
