@@ -380,14 +380,14 @@ function enginesDisagree(c){
    rather than asserting in our own voice. It never tells a clinician what is
    true of a drug; that is the judgement they are here to make. */
 function synthesise(c){
-  const eng = c.engines || {};
+  const eng = usableEngines(c);      // same guard as engSummary -- never Object.keys(c.engines)
   const names = Object.keys(eng);
   if(!names.length) return '';
 
   // Derived from the verdicts present, never a stored flag -- same rule as
   // enginesDisagree. A stale precomputed synthesis is worse than none.
   const tally = {};
-  names.forEach(n => { const v = eng[n] && eng[n].verdict; if(v) tally[v] = (tally[v]||0) + 1; });
+  names.forEach(n => { tally[eng[n].verdict] = (tally[eng[n].verdict] || 0) + 1; });  // usableEngines guarantees .verdict
   const ranked = Object.entries(tally).sort((a,b) => b[1]-a[1]);
   if(!ranked.length) return '';
 
@@ -444,8 +444,20 @@ function synthesise(c){
   '</div>';
 }
 
+/* ⛔ COUNT USABLE ENGINE BLOCKS, NOT KEYS. {a:null, b:{verdict:'ok'}} has two keys and one
+   opinion; counting keys reported "2 suggestions - same suggestion", which asserts an agreement
+   that never happened. Codex caught this in r4, and reintroducing the synthesis block brought
+   it back, so the guard now lives in ONE helper that every counter calls. */
+function usableEngines(c){
+  const out = {};
+  Object.entries((c && c.engines) || {}).forEach(([k, v]) => {
+    if (v && typeof v === 'object' && v.verdict) out[k] = v;
+  });
+  return out;
+}
 function engSummary(c){
-  const n = Object.keys(c.engines||{}).length;
+  const n = Object.keys(usableEngines(c)).length;
+  if(n === 0) return 'no usable suggestion';
   if(n === 1) return '1 suggestion · evidence, not a decision';
   return n + ' suggestions · ' + (enginesDisagree(c) ? 'THEY DISAGREE — read this one yourself'
                                                      : 'same suggestion') + ' · evidence, not a decision';
@@ -453,10 +465,10 @@ function engSummary(c){
 
 /* One research row per source, under every AI suggestion.
    ⚠️ "Resolves" is NOT "supports". A resolved identifier proves the paper EXISTS; whether it
-   backs the sentence is a separate human judgement. A title-level pass over this same set found
-   6 topic mismatches and 4 papers reporting the OPPOSITE direction -- including a real paper on
-   monkey visual cortex cited for a drug-dose claim. So the TITLE is printed next to the claim,
-   where a human can see the mismatch, and never a tick.
+   backs the sentence is a separate human judgement. A title-level pass over a resolved set will
+   turn up topic mismatches, and papers reporting the OPPOSITE direction to the sentence citing
+   them. So the TITLE is printed next to the claim, where a human can see the mismatch, and
+   never a tick.
    A suggestion with no source gets a DASHED rule and a PubMed search link: weaker by structure,
    not by colour. A substantial minority of suggestions land there. */
 function researchRows(e){
@@ -474,10 +486,9 @@ function researchRows(e){
   });
   /* ⛔ THE PROSE SOURCE IS ALWAYS SHOWN, EVEN WHEN SOMETHING RESOLVED.
      The first version of this returned early the moment one citation resolved, which threw away
-     e.source entirely. Codex reproduced the consequence on claim Bd6ee21368f: that assessment
-     cites a placebo review AND a chemotherapy DOI, and only the placebo citation survived --
-     the resolver had matched one identifier, so the rest of what the engine actually relied on
-     vanished from the page. A restoration that hides evidence is worse than the gap it filled,
+     e.source entirely. Codex reproduced the consequence on a claim whose assessment cited two
+     different papers: the resolver matched one identifier, returned early, and the rest of what
+     the engine actually relied on vanished from the page. A restoration that hides evidence is worse than the gap it filled,
      because the gap was visible and this was not. Resolution status is per-source, never a
      switch on the whole list. */
   if(e.source && e.source.trim()){
