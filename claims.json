@@ -660,14 +660,14 @@
     "codex": {
      "verdict": "ok",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000023"
     },
     "grok": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000011"
     }
    },
    "engines_split": true
@@ -690,9 +690,9 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000013"
     }
    }
   },
@@ -728,8 +728,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "PMID 00000021"
     }
    },
    "correction": {
@@ -759,14 +759,14 @@
     "codex": {
      "verdict": "source",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "PMID 00000014"
     },
     "grok": {
      "verdict": "misleading",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "PMID 00000019"
     }
    },
    "engines_split": true
@@ -930,9 +930,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
+     "source": "PMID 00000020"
     }
    }
   },
@@ -954,9 +954,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "NCT00000019"
     }
    }
   },
@@ -978,9 +978,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "PMID 00000007"
     }
    }
   },
@@ -1014,9 +1014,9 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
+     "source": "PMID 00000022"
     }
    }
   },
@@ -1067,8 +1067,8 @@
     "codex": {
      "verdict": "source",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
+     "source": "PMID 00000023; PMID 00000013"
     }
    }
   },
@@ -1131,8 +1131,8 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "PMID 00000007"
     }
    }
   },
@@ -1246,15 +1246,15 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": ""
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "PMID 00000022"
     }
    },
    "engines_split": true
@@ -1321,9 +1321,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "NCT00000013"
     }
    }
   },
@@ -1405,9 +1405,9 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000018"
     }
    }
   },
@@ -1458,8 +1458,8 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "PMID 00000005"
     }
    }
   },
@@ -1510,14 +1510,14 @@
     "codex": {
      "verdict": "population",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "PMID 00000017"
     },
     "grok": {
      "verdict": "population",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "NCT00000005"
     }
    }
   },
@@ -1596,14 +1596,14 @@
     "codex": {
      "verdict": "ok",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
+     "source": "NCT00000001"
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": "PMID 00000021"
     }
    },
    "engines_split": true
@@ -1682,9 +1682,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": ""
     }
    }
   },
@@ -1735,14 +1735,14 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": "NCT00000016"
     },
     "grok": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "NCT00000003"
     }
    },
    "engines_split": true
@@ -1777,9 +1777,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "PMID 00000019; PMID 00000013"
     }
    }
   },
@@ -1801,9 +1801,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "PMID 00000025"
     }
    }
   },
@@ -1837,15 +1837,15 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": "NCT00000007"
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
+     "source": "NCT00000023"
     }
    },
    "engines_split": true
@@ -1937,8 +1937,8 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": ""
     }
    }
   },
@@ -1961,8 +1961,8 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": "NCT00000024"
     }
    }
   },
@@ -2053,8 +2053,8 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "PMID 00000023; PMID 00000019"
     }
    }
   },
@@ -2220,9 +2220,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "PMID 00000025"
     }
    }
   },
@@ -2245,14 +2245,14 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": "PMID 00000018"
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "NCT00000021"
     }
    },
    "engines_split": true
@@ -2291,15 +2291,15 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000015"
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "NCT00000025"
     }
    },
    "engines_split": true
@@ -2338,9 +2338,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": ""
     }
    }
   },
@@ -2375,8 +2375,8 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Narrative rather than claim. No source is required and none is missing. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": ""
     }
    }
   },
@@ -2414,9 +2414,9 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
+     "source": "PMID 00000006"
     }
    }
   },
@@ -2438,9 +2438,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced.",
+     "source": "PMID 00000011; PMID 00000013"
     }
    }
   },
@@ -2463,8 +2463,8 @@
     "codex": {
      "verdict": "ok",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
+     "source": "PMID 00000003"
     }
    }
   },
@@ -2486,9 +2486,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000017; PMID 00000003"
     }
    }
   },
@@ -2574,15 +2574,15 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": ""
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "PMID 00000024"
     }
    },
    "engines_split": true
@@ -2605,15 +2605,15 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "PMID 00000011"
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "PMID 00000017"
     }
    },
    "engines_split": true
@@ -2744,15 +2744,15 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "PMID 00000017"
     },
     "grok": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "PMID 00000002"
     }
    },
    "engines_split": true
@@ -2893,14 +2893,14 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": ""
     },
     "grok": {
      "verdict": "rewrite",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000023"
     }
    },
    "engines_split": true
@@ -2952,13 +2952,13 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000006"
     },
     "grok": {
      "verdict": "preclinical",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
      "source": ""
     }
    },
@@ -2983,8 +2983,8 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": ""
     }
    }
   },
@@ -3047,8 +3047,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": ""
     }
    }
   },
@@ -3083,14 +3083,14 @@
     "codex": {
      "verdict": "source",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "PMID 00000013; PMID 00000024"
     },
     "grok": {
      "verdict": "rewrite",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "PMID 00000015"
     }
    },
    "engines_split": true
@@ -3125,9 +3125,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": ""
     }
    }
   },
@@ -3205,9 +3205,9 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
+     "source": "PMID 00000004; PMID 00000014"
     }
    }
   },
@@ -3269,9 +3269,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": ""
     }
    }
   },
@@ -3317,9 +3317,9 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000020"
     }
    }
   },
@@ -3353,9 +3353,9 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": ""
     }
    }
   },
@@ -3438,8 +3438,8 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": ""
     }
    }
   },
@@ -3566,8 +3566,8 @@
     "codex": {
      "verdict": "ok",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000007"
     }
    }
   },
@@ -3629,9 +3629,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "PMID 00000025"
     }
    }
   },
@@ -3670,14 +3670,14 @@
     "codex": {
      "verdict": "ok",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000021"
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "PMID 00000023"
     }
    },
    "engines_split": true
@@ -3700,14 +3700,14 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": ""
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "confidence": "low",
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
      "source": ""
     }
    },
@@ -3731,9 +3731,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": ""
     }
    }
   },
@@ -3811,9 +3811,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000009"
     }
    }
   },
@@ -4004,13 +4004,13 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000014"
     },
     "grok": {
      "verdict": "notclaim",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "why": "Narrative rather than claim. No source is required and none is missing.",
      "source": ""
     }
    },
@@ -4035,8 +4035,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": ""
     }
    }
   },
@@ -4059,8 +4059,8 @@
     "codex": {
      "verdict": "source",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "PMID 00000010"
     }
    }
   },
@@ -4082,9 +4082,9 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": ""
     }
    }
   },
@@ -4143,14 +4143,14 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000007"
     },
     "grok": {
      "verdict": "preclinical",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": "PMID 00000023"
     }
    },
    "engines_split": true
@@ -4197,9 +4197,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
+     "source": "PMID 00000008; PMID 00000006"
     }
    }
   },
@@ -4221,15 +4221,15 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "PMID 00000022"
     },
     "grok": {
      "verdict": "rewrite",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000002"
     }
    }
   },
@@ -4308,8 +4308,8 @@
     "codex": {
      "verdict": "ok",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "NCT00000004"
     }
    }
   },
@@ -4343,9 +4343,9 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "PMID 00000016; PMID 00000023"
     }
    }
   },
@@ -4440,9 +4440,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "PMID 00000019"
     }
    }
   },
@@ -4545,8 +4545,8 @@
     "codex": {
      "verdict": "population",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "PMID 00000015; PMID 00000018"
     }
    }
   },
@@ -4568,14 +4568,14 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "NCT00000011"
     },
     "grok": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "confidence": "high",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
      "source": ""
     }
    },
@@ -4716,14 +4716,14 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "PMID 00000001"
     },
     "grok": {
      "verdict": "source",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000003; PMID 00000016"
     }
    },
    "engines_split": true
@@ -4862,9 +4862,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "PMID 00000016; PMID 00000009"
     }
    }
   },
@@ -4903,8 +4903,8 @@
     "codex": {
      "verdict": "ok",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "NCT00000007"
     }
    }
   },
@@ -4927,8 +4927,8 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": ""
     }
    }
   },
@@ -4962,15 +4962,15 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "PMID 00000016; PMID 00000003"
     },
     "grok": {
      "verdict": "source",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "PMID 00000016"
     }
    }
   },
@@ -5036,9 +5036,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "PMID 00000023"
     }
    }
   },
@@ -5092,9 +5092,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000005; PMID 00000017"
     }
    }
   },
@@ -5117,8 +5117,8 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": "PMID 00000020"
     }
    }
   },
@@ -5140,9 +5140,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000014"
     }
    }
   },
@@ -5196,9 +5196,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000011"
     }
    }
   },
@@ -5237,14 +5237,14 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "PMID 00000014"
     },
     "grok": {
      "verdict": "source",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "NCT00000022"
     }
    },
    "engines_split": true
@@ -5284,14 +5284,14 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": ""
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
+     "source": "PMID 00000015; PMID 00000013"
     }
    },
    "engines_split": true
@@ -5314,9 +5314,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": ""
     }
    }
   },
@@ -5431,14 +5431,14 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": ""
     },
     "grok": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "NCT00000003"
     }
    },
    "engines_split": true
@@ -5462,8 +5462,8 @@
     "codex": {
      "verdict": "population",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words.",
+     "source": "PMID 00000008; PMID 00000015"
     }
    }
   },
@@ -5570,8 +5570,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": "PMID 00000018"
     }
    }
   },
@@ -5605,9 +5605,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "PMID 00000003"
     }
    }
   },
@@ -5630,8 +5630,8 @@
     "codex": {
      "verdict": "disputed",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "PMID 00000009"
     }
    }
   },
@@ -5653,14 +5653,14 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": ""
     },
     "grok": {
      "verdict": "population",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. This names a product, so the sentence carries commercial weight whether or not it intends to.",
      "source": ""
     }
    },
@@ -5684,9 +5684,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": ""
     }
    }
   },
@@ -5724,9 +5724,9 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
+     "source": "PMID 00000011"
     }
    }
   },
@@ -5760,15 +5760,15 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": "NCT00000019"
     },
     "grok": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "PMID 00000009"
     }
    },
    "engines_split": true
@@ -5791,15 +5791,15 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "Narrative rather than claim. No source is required and none is missing. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": ""
     },
     "grok": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "PMID 00000014"
     }
    },
    "engines_split": true
@@ -5850,15 +5850,15 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000004; PMID 00000016"
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "PMID 00000010; PMID 00000013"
     }
    },
    "engines_split": true
@@ -5881,9 +5881,9 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": ""
     }
    }
   },
@@ -5938,8 +5938,8 @@
     "codex": {
      "verdict": "ok",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "PMID 00000007"
     }
    }
   },
@@ -5961,9 +5961,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": ""
     }
    }
   },
@@ -5985,9 +5985,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": ""
     }
    }
   },
@@ -6026,8 +6026,8 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "PMID 00000010"
     }
    }
   },
@@ -6087,8 +6087,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": "PMID 00000021"
     }
    }
   },
@@ -6135,8 +6135,8 @@
     "codex": {
      "verdict": "population",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words.",
+     "source": "PMID 00000002"
     }
    }
   },
@@ -6158,9 +6158,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000006; PMID 00000013"
     }
    }
   },
@@ -6250,9 +6250,9 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": ""
     }
    }
   },
@@ -6331,8 +6331,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": ""
     }
    }
   },
@@ -6366,9 +6366,9 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": ""
     }
    }
   },
@@ -6475,8 +6475,8 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000024; PMID 00000002"
     }
    }
   },
@@ -6514,15 +6514,15 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "NCT00000018"
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "PMID 00000001"
     }
    },
    "engines_split": true
@@ -6545,15 +6545,15 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000016"
     },
     "grok": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
+     "source": "NCT00000025"
     }
    },
    "engines_split": true
@@ -6576,9 +6576,9 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "NCT00000008"
     }
    }
   },
@@ -6656,14 +6656,14 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "NCT00000017"
     },
     "grok": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "confidence": "low",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world. Phrased as guidance, which shifts it from description to recommendation.",
      "source": ""
     }
    },
@@ -6715,9 +6715,9 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": ""
     }
    }
   },
@@ -6755,15 +6755,15 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": "PMID 00000016; PMID 00000014"
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
+     "source": "PMID 00000020"
     }
    },
    "engines_split": true
@@ -6787,8 +6787,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "PMID 00000018"
     }
    }
   },
@@ -6886,15 +6886,15 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": ""
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "PMID 00000011"
     }
    },
    "engines_split": true
@@ -6933,9 +6933,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "PMID 00000010"
     }
    }
   },
@@ -7066,8 +7066,8 @@
     "codex": {
      "verdict": "population",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": ""
     }
    }
   },
@@ -7129,14 +7129,14 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000022"
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "confidence": "high",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
      "source": ""
     }
    },
@@ -7221,14 +7221,14 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": ""
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "PMID 00000022; PMID 00000016"
     }
    },
    "engines_split": true
@@ -7252,8 +7252,8 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": ""
     }
    }
   },
@@ -7275,9 +7275,9 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": ""
     }
    }
   },
@@ -7340,8 +7340,8 @@
     "codex": {
      "verdict": "disputed",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
+     "source": "PMID 00000009"
     }
    }
   },
@@ -7427,9 +7427,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000016"
     }
    }
   },
@@ -7451,15 +7451,15 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": ""
     },
     "grok": {
      "verdict": "ok",
      "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
+     "source": "PMID 00000020"
     }
    },
    "engines_split": true
@@ -7506,9 +7506,9 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": ""
     }
    }
   },
@@ -7607,8 +7607,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": "PMID 00000016"
     }
    }
   },
@@ -7646,15 +7646,15 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "PMID 00000025"
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "PMID 00000009"
     }
    },
    "engines_split": true
@@ -7689,15 +7689,15 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000001"
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "PMID 00000020; PMID 00000022"
     }
    },
    "engines_split": true
@@ -7720,9 +7720,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000018; PMID 00000019"
     }
    }
   },
@@ -7745,8 +7745,8 @@
     "codex": {
      "verdict": "population",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "PMID 00000025"
     }
    }
   },
@@ -7828,9 +7828,9 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": ""
     }
    }
   },
@@ -7868,9 +7868,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "PMID 00000025"
     }
    }
   },
@@ -8033,8 +8033,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000018; PMID 00000014"
     }
    }
   },
@@ -8117,8 +8117,8 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "NCT00000014"
     }
    }
   },
@@ -8140,9 +8140,9 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "PMID 00000001"
     }
    }
   },
@@ -8208,15 +8208,15 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": ""
     },
     "grok": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "low",
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "NCT00000011"
     }
    },
    "engines_split": true
@@ -8239,9 +8239,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": ""
     }
    }
   },
@@ -8304,8 +8304,8 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": ""
     }
    }
   },
@@ -8355,14 +8355,14 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "PMID 00000006"
     },
     "grok": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
+     "confidence": "high",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
      "source": ""
     }
    },
@@ -8479,8 +8479,8 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "PMID 00000001; PMID 00000003"
     }
    }
   },
@@ -8530,9 +8530,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "PMID 00000011"
     }
    }
   },
@@ -8583,14 +8583,14 @@
     "codex": {
      "verdict": "source",
      "confidence": "low",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it.",
+     "source": "PMID 00000010"
     },
     "grok": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "A second engine reviewed the same sentence independently.",
-     "source": ""
+     "confidence": "high",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "PMID 00000021"
     }
    },
    "engines_split": true
@@ -8614,8 +8614,8 @@
     "codex": {
      "verdict": "disputed",
      "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000019"
     }
    }
   },
@@ -8637,9 +8637,9 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "high",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "medium",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": ""
     }
    }
   },
@@ -8661,9 +8661,9 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
+     "source": "PMID 00000017"
     }
    }
   },
@@ -8713,9 +8713,9 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "high",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "NCT00000025"
     }
    }
   },
@@ -8765,9 +8765,9 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "Placeholder reasoning for the demo. In the real tool this explains what the evidence says and why the verdict follows.",
-     "source": "PMID 12345678"
+     "confidence": "low",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": ""
     }
    }
   },

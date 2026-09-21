@@ -93,6 +93,21 @@ input[type=search]{flex:1;min-width:200px}
    OPEN BY DEFAULT -- this is the research, and it is the one thing a reviewer cannot
    reconstruct for themselves. */
 .eng{border-top:1px solid var(--line);padding:12px 0;margin:0 0 4px}
+/* ⛔ THE SYNTHESIS BLOCK. Read the comment on synthesise() before changing any of this.
+   The label is TEXT, in the markup, always rendered. The tint and the accent bar are
+   reinforcement only: strip every colour from this rule set and the block still says
+   "AI synthesis · N models · not a clinical decision" and still reads as machine output.
+   That is the test. If a restyle makes the tint load-bearing, the restyle is wrong. */
+.synth{border:1px solid var(--line);border-left:3px solid var(--ink-2);
+  background:var(--surface-2);padding:12px 14px;margin:0 0 14px;border-radius:2px}
+.synthlab{font:600 10.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-2);margin-bottom:8px}
+.synthhead{font:600 14px/1.45 var(--sans);color:var(--ink);margin:0 0 5px}
+.synthbody{font:400 13.5px/1.62 var(--sans);color:var(--ink);margin:0 0 8px}
+.synthsrc{font:400 12.5px/1.6 var(--sans);color:var(--ink-2);margin:0 0 8px}
+.synthfoot{font:italic 12px/1.55 var(--sans);color:var(--ink-3);margin:0;
+  padding-top:8px;border-top:1px dotted var(--line)}
+@media print{ .synth{background:none;border-left-width:4px} }
 .eng h4{margin:0 0 10px;font:600 16px var(--sans);color:var(--ink)}
 .eng h4 .sum{font:400 12px var(--sans);color:var(--ink-3);margin-left:8px}
 .ai{border:1px solid var(--line);border-radius:var(--r-ctl);padding:14px 16px;margin-bottom:8px}
@@ -339,6 +354,96 @@ function enginesDisagree(c){
     .map(e => e.verdict);
   return new Set(vs).size > 1;
 }
+/* ⛔ THE SYNTHESIS IS THE ONLY BLOCK ON THIS PAGE THAT SPEAKS IN ONE VOICE.
+   Everything else shows a reviewer raw inputs and lets them judge. This block
+   does the judging, so it is the one most able to mislead, and it gets the
+   strongest labelling on the page.
+
+   WHY IT EXISTS AT ALL. A clinician working through a claim like this will ask
+   an AI for help whether or not we provide one -- by pasting the sentence into
+   whatever chat window is open. That version has no sources, no second model,
+   no record, and only the fragment they pasted for context. This one has the
+   sentence, its chapter, three independent verdicts and the resolved citations
+   already loaded. The realistic alternative to this block is not "no AI
+   opinion"; it is a worse AI opinion, formed outside the audit trail.
+
+   ⛔ WHY THE DISCLAIMER IS TEXT AND NOT COLOUR. Colour was the first proposal
+   and it fails the moment the block leaves the screen: screenshotted into a
+   chart note, printed, pasted into mail, or read by someone with a red-green
+   deficiency -- which runs about 8% in men, and the reviewers here are men.
+   The tint is gone and the words remain, so the words carry the meaning. The
+   styling reinforces; it never carries. This is also why the design spec
+   removed verdict colours in the first place.
+
+   SCOPE. It recommends about the SENTENCE -- cite this, narrow that, say which
+   population. Where it touches subject matter it attributes to the sources
+   rather than asserting in our own voice. It never tells a clinician what is
+   true of a drug; that is the judgement they are here to make. */
+function synthesise(c){
+  const eng = c.engines || {};
+  const names = Object.keys(eng);
+  if(!names.length) return '';
+
+  // Derived from the verdicts present, never a stored flag -- same rule as
+  // enginesDisagree. A stale precomputed synthesis is worse than none.
+  const tally = {};
+  names.forEach(n => { const v = eng[n] && eng[n].verdict; if(v) tally[v] = (tally[v]||0) + 1; });
+  const ranked = Object.entries(tally).sort((a,b) => b[1]-a[1]);
+  if(!ranked.length) return '';
+
+  const [topVerdict, topCount] = ranked[0];
+  const unanimous = ranked.length === 1 && names.length > 1;
+  const split     = ranked.length > 1;
+
+  const agreeing = names.filter(n => eng[n].verdict === topVerdict);
+  const differing = names.filter(n => eng[n].verdict !== topVerdict);
+
+  // Every source any model leaned on, deduplicated. A reviewer checking the
+  // synthesis should not have to reassemble the evidence from three blocks.
+  const srcs = [];
+  names.forEach(n => {
+    const e = eng[n];
+    (e.resolved || []).forEach(r => { if(r.pmid && srcs.indexOf(r.pmid) < 0) srcs.push(r.pmid); });
+    String(e.source || '').split(/[;,]/).forEach(s => {
+      const m = /((?:PMID|NCT)\s*[0-9]+)/i.exec(s.trim());
+      if(m && srcs.indexOf(m[1]) < 0) srcs.push(m[1]);
+    });
+  });
+
+  const L = v => VERDICT_LABEL[v] || v;
+  let head, body;
+  if(names.length === 1){
+    head = 'One model, unreviewed by a second';
+    body = 'Only ' + esc(names[0]) + ' assessed this sentence, suggesting <b>' + esc(L(topVerdict)) +
+           '</b>. Nothing here has been cross-checked, so treat it as a single opinion rather than a synthesis.';
+  } else if(unanimous){
+    head = (names.length === 2 ? 'Both models agree' : 'All ' + names.length + ' models agree');
+    body = 'Independently, ' + esc(agreeing.join(' and ')) + ' each reached <b>' + esc(L(topVerdict)) +
+           '</b>. Agreement across models is a reason to look closely, not a reason to skip the check — ' +
+           'they share training data and can be wrong the same way.';
+  } else if(split){
+    head = 'The models split ' + topCount + '–' + (names.length - topCount);
+    body = esc(agreeing.join(' and ')) + (agreeing.length > 1 ? ' suggest ' : ' suggests ') + '<b>' + esc(L(topVerdict)) + '</b>; ' +
+           differing.map(n => esc(n) + ' suggests <b>' + esc(L(eng[n].verdict)) + '</b>').join(', ') +
+           '. A split is the signal that this sentence needs your judgement rather than a tiebreak.';
+  }
+
+  return '<div class="synth">' +
+    '<div class="synthlab">AI synthesis · ' + names.length + ' model' + (names.length>1?'s':'') +
+      ' · not a clinical decision</div>' +
+    '<p class="synthhead">' + head + '</p>' +
+    '<p class="synthbody">' + body + '</p>' +
+    (srcs.length
+      ? '<p class="synthsrc"><b>Evidence the models leaned on:</b> ' + srcs.map(esc).join(' · ') +
+        ' — listed so you can check it yourself, not as confirmation it supports the sentence.</p>'
+      : '<p class="synthsrc"><b>No model cited anything.</b> The suggestion above rests on the ' +
+        'sentence alone, which is the weakest form this block takes.</p>') +
+    '<p class="synthfoot">Generated by combining the suggestions below. It is an editorial ' +
+      'recommendation about how this sentence carries its evidence — not advice about the ' +
+      'medicine, and not a sign-off. You decide.</p>' +
+  '</div>';
+}
+
 function engSummary(c){
   const n = Object.keys(c.engines||{}).length;
   if(n === 1) return '1 suggestion · evidence, not a decision';
@@ -353,7 +458,7 @@ function engSummary(c){
    monkey visual cortex cited for a drug-dose claim. So the TITLE is printed next to the claim,
    where a human can see the mismatch, and never a tick.
    A suggestion with no source gets a DASHED rule and a PubMed search link: weaker by structure,
-   not by colour. 96 of 338 suggestions land there. */
+   not by colour. A substantial minority of suggestions land there. */
 function researchRows(e){
   const rows = (e.resolved || []).map(r => {
     const pm = esc(r.pmid || '');
@@ -455,6 +560,7 @@ function render(){
       </div>`:''}
       ${c.engines ? `<div class="eng ${enginesDisagree(c)?'split':''}">
         <h4>AI suggestions<span class="sum">${engSummary(c)}</span></h4>
+        ${synthesise(c)}
         ${Object.entries(c.engines).map(([name,e]) => `<div class="ai">
           <div class="hd">
             <span class="aichip">AI · ${esc(name)}</span>
