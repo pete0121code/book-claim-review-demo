@@ -60,3 +60,34 @@ Then open http://127.0.0.1:8000/
 
 The manuscript, the real claims, the real citations, the reviewers' verdicts, and the
 password-gated deployment. This repository contains none of them by design.
+
+## What is in here (updated 2026-09-20 — now the WHOLE site, not one page)
+
+This mirrors **every template** in the real reviewing tool, built by the **real generators** running
+against synthetic data. Restyle any of these and the change ports straight back.
+
+| Page | Template | What it is |
+|---|---|---|
+| `site/index.html` | the reviewer desk | the main surface — one card per sentence, 8 verdict buttons, engine block, prior-review block, correction block |
+| `site/text/index.html` | chapter index | jump list into the manuscript |
+| `site/text/ch-01..06.html` | chapter page | the text itself, every sentence anchored, priority sentences underlined |
+| `site/sources.html` | citation table | every identifier an engine cited |
+| `site/questions.html` | author questions | sentences whose numbers trace to nothing |
+| `site/corrections/index.html` | corrections sheet | the factual-error list, linked back into the review |
+
+**The generators ship too** — `build_site.py`, `build_book.py`, `build_corrections.py`. You asked
+where a restyle should land so it does not get overwritten: it lands in these three files, which
+emit the HTML and hold the CSS. Editing a generated `.html` alone would be wiped on the next build.
+
+## What is real and what is not
+
+- **Real:** every template, all the CSS, the DOM structure, the interaction model, the generators.
+- **Synthetic:** all 454 sentences across 6 invented chapters, all citations, all corrections, all
+  author questions. Names are `A. Author` / `B. Author`; the manuscript is `Sample Manuscript`.
+- **Verified before hand-off** (whole repo, 19 files, not just the page): 0 real manuscript
+  sentences, 0 occurrences of the real title, either author, the institute, or the internal
+  hostnames; 0 real citation identifiers. The check runs with a positive control, so a silently
+  broken scan cannot pass.
+
+The real tool is password-gated and the manuscript is unpublished. That is why you get this instead
+of the live URL — the design work needs the templates, not the text.

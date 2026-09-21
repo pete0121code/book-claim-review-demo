@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sample Manuscript — manuscript</title><style>
+/* Same tokens as the reviewer desk (Claude Design spec v1) so the two surfaces are one product.
+   ⛔ --p1 was red and --p2 orange: on a page of continuous prose that reads as "these sentences
+   are WRONG", which is a verdict nobody has reached yet. Priority only means "a reviewer should
+   look at this one first". It is now weight, not hue. */
+:root{--bg:#F4F2EE;--paper:#FFFFFF;--surface-2:#ECE9E3;--ink:#1C1C1A;--ink-2:#55534E;
+  --muted:#8A867E;--line:#DDD9D1;--line-2:#B8B3A9;--hit:#F3E9B8;--link:#3B5B7A;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:17px/1.68 Georgia,"Iowan Old Style","Times New Roman",serif}
+header{background:var(--paper);color:var(--ink);padding:14px 20px;
+  border-bottom:1px solid var(--line);font-family:var(--sans)}
+header a{color:var(--link);text-decoration:none;font-size:13px}
+header a:hover{text-decoration:underline}
+header h1{margin:3px 0 0;font-size:17px;font-weight:600}
+.banner{background:var(--surface-2);border-bottom:1px solid var(--line);color:var(--ink-2);
+  padding:9px 20px;font:13px/1.5 var(--sans)}
+.wrap{max-width:720px;margin:0 auto;padding:26px 20px 70px;background:var(--paper);
+  border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh}
+h2.chap{font-size:22px;line-height:1.3;margin:0 0 6px}
+h3.sec{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+  margin:30px 0 8px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+p.para{margin:0 0 15px}
+.num{font:11px/1 -apple-system,BlinkMacSystemFont,sans-serif;color:#b8b3a8;
+  float:left;margin-left:-44px;width:34px;text-align:right;padding-top:6px}
+s-1,s-2,s-3,s-4{display:inline}
+.f1{border-bottom:1px solid var(--ink)}
+.f2{border-bottom:1px solid var(--line-2)}
+/* A known factual error is outlined, not tinted: dashed means "still open" across this design. */
+.known{outline:1px dashed var(--line-2);outline-offset:2px}
+:target{background:var(--hit);box-shadow:0 0 0 3px var(--hit);border-radius:2px}
+nav.toc{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:15px}
+nav.toc a{display:block;padding:9px 0;border-bottom:1px solid var(--line);
+  color:var(--ink);text-decoration:none}
+nav.toc a:hover{color:var(--link)}
+nav.toc .n{color:var(--muted);font-size:12.5px}
+.pager{display:flex;justify-content:space-between;gap:12px;margin:34px 0 0;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px}
+.pager a{color:var(--link);text-decoration:none}
+.legend{font:12.5px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:12px;margin-top:26px}
+@media (max-width:760px){.num{display:none}.wrap{padding:20px 16px 60px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#141311;--paper:#1C1B19;--surface-2:#242220;--ink:#E9E5DD;--ink-2:#A9A49B;
+  --muted:#78746C;--line:#2F2D29;--line-2:#4A4741;--hit:#5A4A12;--link:#8FB0CF}}
+</style></head><body>
+<header><a href="../index.html">← Claim review</a><h1>Sample Manuscript — the manuscript</h1></header>
+<div class="banner">Unpublished manuscript. Internal review only — not published, not indexed,
+not medical advice. Source file <code>SYNTHETIC-DEMO-DATA.docx</code> (md5 <code>00000000000000000000000000000000</code>).</div>
+<div class="wrap"><nav class="toc"><a href="ch-01.html">Chapter 1 — HOW THIS WORKS<span class="n"> — 81 sentences · 24 priority 1 · <b>2 known errors</b></span></a>
+<a href="ch-02.html">Chapter 2 — THE IMMUNE SYSTEM<span class="n"> — 80 sentences · 17 priority 1 · <b>1 known error</b></span></a>
+<a href="ch-03.html">Chapter 3 — TREATMENT OPTIONS<span class="n"> — 70 sentences · 13 priority 1 · <b>1 known error</b></span></a>
+<a href="ch-04.html">Chapter 4 — DRUGS AND SUPPLEMENTS<span class="n"> — 73 sentences · 28 priority 1 · <b>1 known error</b></span></a>
+<a href="ch-05.html">Chapter 5 — DIET AND THE MICROBIOME<span class="n"> — 73 sentences · 19 priority 1</span></a>
+<a href="ch-06.html">Chapter 6 — QUESTIONS TO ASK<span class="n"> — 77 sentences · 20 priority 1</span></a></nav>
+<p class="legend">454 sentences across 6 chapters. Every sentence is individually
+addressable, so a claim in the review tool links straight to the sentence in its
+chapter.</p></div></body></html>

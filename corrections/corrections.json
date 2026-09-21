@@ -1,0 +1,45 @@
+{
+ "source": "SYNTHETIC-corrections-sheet.pdf",
+ "prepared": "2026-09-20",
+ "sheet_source_manuscript": "Sample Manuscript (synthetic demo).docx",
+ "note": "SYNTHETIC DEMO DATA. This mirrors the SCHEMA of a real corrections sheet so the corrections template renders exactly as it does in production. Every quote, label, page and replacement is invented for design review. Nothing here is a real finding.",
+ "spanish_note": "Synthetic placeholder \u2014 the real pipeline records whether a translated edition was checked.",
+ "items": [
+  {
+   "n": 1,
+   "severity": "substantive",
+   "label": "Placeholder figure disagrees with the placeholder table",
+   "chapter_per_sheet": "Chapter 1 \u2014 HOW THIS WORKS",
+   "match": "Response rates roughly doubled in the treated group.",
+   "problem": "The sample sentence and the sample table state different placeholder figures for the same quantity.",
+   "replacement": "SYNTHETIC replacement text for design review. In production this field carries the author-approved rewrite of the quoted passage."
+  },
+  {
+   "n": 2,
+   "severity": "substantive",
+   "label": "Two names used for the same sample concept",
+   "chapter_per_sheet": "Chapter 2 \u2014 THE IMMUNE SYSTEM",
+   "match": "This approach is not approved for this use",
+   "problem": "The sample text introduces a concept under one name and refers back to it under another.",
+   "replacement": "SYNTHETIC replacement text for design review. In production this field carries the author-approved rewrite of the quoted passage."
+  },
+  {
+   "n": 3,
+   "severity": "minor",
+   "label": "Duration given in weeks in one place and months in another",
+   "chapter_per_sheet": "Chapter 3 \u2014 TREATMENT OPTIONS",
+   "match": "This chapter explains the idea in plain language",
+   "problem": "A unit mismatch between the sample sentence and the sample table it refers to.",
+   "replacement": "SYNTHETIC replacement text for design review. In production this field carries the author-approved rewrite of the quoted passage."
+  },
+  {
+   "n": 4,
+   "severity": "moderate",
+   "label": "Sample citation points at the wrong sample source",
+   "chapter_per_sheet": "Chapter 4 \u2014 DRUGS AND SUPPLEMENTS",
+   "match": "We use 100 grams intravenously, three times a",
+   "problem": "The sample sentence attributes a statement to a source that does not contain it.",
+   "replacement": "SYNTHETIC replacement text for design review. In production this field carries the author-approved rewrite of the quoted passage."
+  }
+ ]
+}
