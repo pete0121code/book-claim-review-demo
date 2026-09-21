@@ -291,7 +291,7 @@ function linkify(s){
   // Only linkify an NCT id that is NOT already inside generated markup. The URL rule above runs
   // first, so a clinicaltrials.gov URL has already become <a href="...NCT12345678">...</a>; this
   // rule then matched the id INSIDE that href and nested a second anchor in it, producing a
-  // broken link and mangled citation text on 4 real claims.
+  // broken link and mangled citation text wherever that pattern occurred.
   out = out.replace(/\b(NCT\d{8})\b(?![^<]*<\/a>)/g,
     '<a href="https://clinicaltrials.gov/study/$1" target="_blank" rel="noopener">$1</a>');
   return out;
@@ -309,11 +309,12 @@ function shortChapter(c){ return c.replace(/^(CHAPTER|Chapter)\s*(\d+)\s*/, 'Ch 
    presented as agreement is the one error that would actively mislead a clinician, so the
    wording is derived from the data on each card, never assumed. */
 /* ⛔ DERIVE DISAGREEMENT, DO NOT TRUST THE PRECOMPUTED FLAG.
-   Measured 2026-09-20: 81 sentences carry more than one suggestion, 41 of those have genuinely
-   DIFFERENT verdicts, and only 21 were flagged `engines_split`. So 20 cards would have told a
-   clinician "same suggestion" while grok said "true but misleading" and codex said "disputed".
-   A page that manufactures consensus is worse than one that shows none, and the verdicts are
-   right there in the object -- there is no reason to take a stale boolean's word for it. */
+   When this was measured, the precomputed `engines_split` flag disagreed with the actual
+   verdicts on a meaningful share of multi-suggestion cards -- those cards would have told a
+   clinician "same suggestion" while one reviewer said "true but misleading" and another said
+   "disputed". A page that manufactures consensus is worse than one that shows none, and the
+   verdicts are right there in the object -- there is no reason to take a stale boolean's
+   word for it. */
 function enginesDisagree(c){
   // Guarded: a null or non-object engine value would throw on e.verdict and abort the whole
   // card render. The current corpus has none, but "it does not throw today" is not a property
@@ -384,9 +385,9 @@ function filtered(){
       const e = c.engines || {};
       if(!Object.values(e).some(x => x.verdict !== 'ok' && x.verdict !== 'notclaim')) return false;
     } else if(state.status === 'split'){
-      // Derived, not the stale flag: the "Engines disagree" queue was showing 21 of the 41
-      // sentences where they actually disagree, so 20 were unreachable by the one filter a
-      // reviewer would use to find exactly those.
+      // Derived, not the stale flag: the "Engines disagree" queue was driven by the stored
+      // boolean, which had drifted from the verdicts. Most sentences where the reviewers
+      // actually disagree were unreachable by the one filter built to find exactly those.
       if(!enginesDisagree(c)) return false;
     } else if(state.status){
       const v = (saved[c.id]||{}).verdict || 'none';
