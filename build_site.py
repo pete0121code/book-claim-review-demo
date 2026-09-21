@@ -107,6 +107,20 @@ input[type=search]{flex:1;min-width:200px}
 .synthsrc{font:400 12.5px/1.6 var(--sans);color:var(--ink-2);margin:0 0 8px}
 .synthfoot{font:italic 12px/1.55 var(--sans);color:var(--ink-3);margin:0;
   padding-top:8px;border-top:1px dotted var(--line)}
+.synthrow{font:400 13.5px/1.62 var(--sans);color:var(--ink);margin:0 0 9px}
+.synthk{display:block;font:600 10.5px/1 var(--sans);letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-2);margin-bottom:3px}
+.synthnote{color:var(--ink-3)}
+.synthcite{font:400 12.5px/1.6 var(--sans);color:var(--ink);border-left:2px solid var(--line-2);
+  padding:2px 0 2px 10px;margin:0 0 8px}
+.whycite{display:block;font:400 12px/1.55 var(--sans);color:var(--ink-2);margin-top:3px}
+.engdet{margin:2px 0 0;border-top:1px dotted var(--line);padding-top:8px}
+.engdet>summary{font:500 12.5px var(--sans);color:var(--ink-2);cursor:pointer;
+  list-style:none;padding:4px 0;min-height:32px}
+.engdet>summary::-webkit-details-marker{display:none}
+.engdet>summary::before{content:"\25B8 ";color:var(--ink-3)}
+.engdet[open]>summary::before{content:"\25BE "}
+.engdetnote{color:var(--ink-3);font-weight:400;margin-left:6px}
 @media print{ .synth{background:none;border-left-width:4px} }
 .eng h4{margin:0 0 10px;font:600 16px var(--sans);color:var(--ink)}
 .eng h4 .sum{font:400 12px var(--sans);color:var(--ink-3);margin-left:8px}
@@ -354,100 +368,32 @@ function enginesDisagree(c){
     .map(e => e.verdict);
   return new Set(vs).size > 1;
 }
-/* ⛔ THE SYNTHESIS IS THE ONLY BLOCK ON THIS PAGE THAT SPEAKS IN ONE VOICE.
-   Everything else shows a reviewer raw inputs and lets them judge. This block
-   does the judging, so it is the one most able to mislead, and it gets the
-   strongest labelling on the page.
+/* ⛔ THIS BLOCK IS WRITTEN FOR A CLINICIAN, NOT FOR US.
 
-   WHY IT EXISTS AT ALL. A clinician working through a claim like this will ask
-   an AI for help whether or not we provide one -- by pasting the sentence into
-   whatever chat window is open. That version has no sources, no second model,
-   no record, and only the fragment they pasted for context. This one has the
-   sentence, its chapter, three independent verdicts and the resolved citations
-   already loaded. The realistic alternative to this block is not "no AI
-   opinion"; it is a worse AI opinion, formed outside the audit trail.
+   The first version failed review in one sentence: "this is AI slop gobbledygook
+   for a doctor." It said "The models split 1-1", named codex and grok, printed
+   bare PMIDs, and spent its last line on epistemics. Every one of those is a
+   fact about OUR pipeline. A reviewing physician does not know what codex is,
+   has no reason to learn, and did not come here to audit our tooling.
 
-   ⛔ WHY THE DISCLAIMER IS TEXT AND NOT COLOUR. Colour was the first proposal
-   and it fails the moment the block leaves the screen: screenshotted into a
-   chart note, printed, pasted into mail, or read by someone with a red-green
-   deficiency -- which runs about 8% in men, and the reviewers here are men.
-   The tint is gone and the words remain, so the words carry the meaning. The
-   styling reinforces; it never carries. This is also why the design spec
-   removed verdict colours in the first place.
+   WHAT A DOCTOR GETS, in this order, and nothing else:
+     ISSUE       one line: what is wrong with the sentence
+     WHAT WE FOUND  plain English, no engine names, no tallies
+     SUGGESTED   the concrete change, or "no change needed"
+     PAPERS      counted and linked, never a bare identifier
+   The engine-by-engine detail still exists -- it is collapsed below, for Pete.
+   Granularity was never the problem; granularity in the DOCTOR'S path was.
 
-   SCOPE. It recommends about the SENTENCE -- cite this, narrow that, say which
-   population. Where it touches subject matter it attributes to the sources
-   rather than asserting in our own voice. It never tells a clinician what is
-   true of a drug; that is the judgement they are here to make. */
-function synthesise(c){
-  const eng = usableEngines(c);      // same guard as engSummary -- never Object.keys(c.engines)
-  const names = Object.keys(eng);
-  if(!names.length) return '';
-
-  // Derived from the verdicts present, never a stored flag -- same rule as
-  // enginesDisagree. A stale precomputed synthesis is worse than none.
-  const tally = {};
-  names.forEach(n => { tally[eng[n].verdict] = (tally[eng[n].verdict] || 0) + 1; });  // usableEngines guarantees .verdict
-  const ranked = Object.entries(tally).sort((a,b) => b[1]-a[1]);
-  if(!ranked.length) return '';
-
-  const [topVerdict, topCount] = ranked[0];
-  const unanimous = ranked.length === 1 && names.length > 1;
-  const split     = ranked.length > 1;
-
-  const agreeing = names.filter(n => eng[n].verdict === topVerdict);
-  const differing = names.filter(n => eng[n].verdict !== topVerdict);
-
-  // Every source any model leaned on, deduplicated. A reviewer checking the
-  // synthesis should not have to reassemble the evidence from three blocks.
-  const srcs = [];
-  names.forEach(n => {
-    const e = eng[n];
-    (e.resolved || []).forEach(r => { if(r.pmid && srcs.indexOf(r.pmid) < 0) srcs.push(r.pmid); });
-    String(e.source || '').split(/[;,]/).forEach(s => {
-      const m = /((?:PMID|NCT)\s*[0-9]+)/i.exec(s.trim());
-      if(m && srcs.indexOf(m[1]) < 0) srcs.push(m[1]);
-    });
-  });
-
-  const L = v => VERDICT_LABEL[v] || v;
-  let head, body;
-  if(names.length === 1){
-    head = 'One model, unreviewed by a second';
-    body = 'Only ' + esc(names[0]) + ' assessed this sentence, suggesting <b>' + esc(L(topVerdict)) +
-           '</b>. Nothing here has been cross-checked, so treat it as a single opinion rather than a synthesis.';
-  } else if(unanimous){
-    head = (names.length === 2 ? 'Both models agree' : 'All ' + names.length + ' models agree');
-    body = 'Independently, ' + esc(agreeing.join(' and ')) + ' each reached <b>' + esc(L(topVerdict)) +
-           '</b>. Agreement across models is a reason to look closely, not a reason to skip the check — ' +
-           'they share training data and can be wrong the same way.';
-  } else if(split){
-    head = 'The models split ' + topCount + '–' + (names.length - topCount);
-    body = esc(agreeing.join(' and ')) + (agreeing.length > 1 ? ' suggest ' : ' suggests ') + '<b>' + esc(L(topVerdict)) + '</b>; ' +
-           differing.map(n => esc(n) + ' suggests <b>' + esc(L(eng[n].verdict)) + '</b>').join(', ') +
-           '. A split is the signal that this sentence needs your judgement rather than a tiebreak.';
-  }
-
-  return '<div class="synth">' +
-    '<div class="synthlab">AI synthesis · ' + names.length + ' model' + (names.length>1?'s':'') +
-      ' · not a clinical decision</div>' +
-    '<p class="synthhead">' + head + '</p>' +
-    '<p class="synthbody">' + body + '</p>' +
-    (srcs.length
-      ? '<p class="synthsrc"><b>Evidence the models leaned on:</b> ' + srcs.map(esc).join(' · ') +
-        ' — listed so you can check it yourself, not as confirmation it supports the sentence.</p>'
-      : '<p class="synthsrc"><b>No model cited anything.</b> The suggestion above rests on the ' +
-        'sentence alone, which is the weakest form this block takes.</p>') +
-    '<p class="synthfoot">Generated by combining the suggestions below. It is an editorial ' +
-      'recommendation about how this sentence carries its evidence — not advice about the ' +
-      'medicine, and not a sign-off. You decide.</p>' +
-  '</div>';
-}
+   ⛔ NO MODEL NAMES ABOVE THE FOLD. If you are about to write "codex", "grok",
+   "2 models" or "the models split", you are writing for the wrong reader.
+   "The automated reviews disagreed" carries the same information and needs no
+   glossary. Disagreement is a FACT ABOUT THE SENTENCE -- it means borderline --
+   so say that, rather than reporting a scoreboard and leaving them to infer it. */
 
 /* ⛔ COUNT USABLE ENGINE BLOCKS, NOT KEYS. {a:null, b:{verdict:'ok'}} has two keys and one
    opinion; counting keys reported "2 suggestions - same suggestion", which asserts an agreement
-   that never happened. Codex caught this in r4, and reintroducing the synthesis block brought
-   it back, so the guard now lives in ONE helper that every counter calls. */
+   that never happened. Codex caught this in r4 and it has been reintroduced twice since, so it
+   lives in ONE helper that every counter calls. */
 function usableEngines(c){
   const out = {};
   Object.entries((c && c.engines) || {}).forEach(([k, v]) => {
@@ -455,12 +401,130 @@ function usableEngines(c){
   });
   return out;
 }
+
+/* Plain-English issue + suggested change per verdict. The doctor-facing copy
+   lives here so it is changed in ONE place, not inside a template string. */
+const PLAIN = {
+  ok:          {issue:'Nothing found — the sentence stays inside what its source supports.',
+                fix:'No change needed.'},
+  source:      {issue:'States something checkable but does not say where it came from.',
+                fix:'Add a citation for the figure, or take the figure out.'},
+  population:  {issue:'Applies a finding more broadly than the patients it was studied in.',
+                fix:'Say which patients it applies to.'},
+  preclinical: {issue:'Describes laboratory or animal work in language that reads as proven in people.',
+                fix:'Say the evidence is early-stage.'},
+  misleading:  {issue:'Every part is accurate, but together they imply more than the evidence shows.',
+                fix:'Rewrite it so the caveat is not buried at the end.'},
+  disputed:    {issue:'Presents a contested point as settled.',
+                fix:'Note that sources disagree, or pick a side and say so.'},
+  rewrite:     {issue:'Several problems at once — adding a citation will not fix it.',
+                fix:'Rewrite the sentence.'},
+  notclaim:    {issue:'Not a factual claim — nothing here to check.',
+                fix:'No change needed.'}
+};
+
+function synthesise(c){
+  const eng = usableEngines(c);      // same guard as engSummary -- never Object.keys(c.engines)
+  const names = Object.keys(eng);
+  if(!names.length) return '';
+
+  // Derived from the verdicts present, never a stored flag. A stale synthesis
+  // would be worse than none.
+  const tally = {};
+  names.forEach(n => { tally[eng[n].verdict] = (tally[eng[n].verdict] || 0) + 1; });
+  /* ⛔ ON A DISAGREEMENT, LEAD WITH THE CONCERN -- NEVER THE CLEAN READING.
+     The first version ranked by COUNT and took the winner. On a 1-1 split that
+     picks arbitrarily, and it picked 'ok': the card told a reviewing physician
+     "Issue: nothing found. Suggested: no change needed" on a sentence another
+     reviewer had flagged for a missing source. That is not a cosmetic bug. It
+     is the tool actively suppressing the only finding on the card, in the exact
+     situation the tool exists for.
+     So ties break by SEVERITY, and a concern always outranks a clean verdict.
+     A doctor can dismiss a concern in two seconds; they cannot act on one they
+     were never shown. */
+  /* NOTE ON THE TWO BOTTOM VALUES: 'ok' and 'notclaim' are both NON-CONCERNS.
+     notclaim ranks above ok only so that "nothing here to check" beats "nothing
+     found" when those two are the whole disagreement -- it is the more specific
+     statement, not a more serious one. Anything at source(2) or above IS a
+     concern and must lead. A test that treats notclaim as a concern will report
+     a false suppression; ask whether the verdict names a PROBLEM, not whether
+     its number is above zero. */
+  const SEVERITY = {rewrite:7, misleading:6, disputed:5, population:4,
+                    preclinical:3, source:2, notclaim:1, ok:0};
+  const ranked = Object.entries(tally).sort((a,b) =>
+    (b[1] - a[1]) || ((SEVERITY[b[0]]||0) - (SEVERITY[a[0]]||0)));
+  if(!ranked.length) return '';
+  const split = ranked.length > 1;
+  // On a split the concern leads, whatever the tally says.
+  const top = split
+    ? ranked.map(r => r[0]).sort((a,b) => (SEVERITY[b]||0) - (SEVERITY[a]||0))[0]
+    : ranked[0][0];
+
+  const plain = PLAIN[top] || {issue:'Flagged for review.', fix:'Read it yourself.'};
+
+  /* Disagreement is reported as what it MEANS, not as a score. A doctor needs
+     "this one is borderline"; the 1-1 tally is our business, and it is in the
+     collapsed detail below for anyone who wants it. */
+  let found;
+  if(split){
+    const others = ranked.map(r => r[0]).filter(v => v !== top);
+    const altTxt = others.map(v => esc((PLAIN[v]||{}).issue || v).replace(/\.$/,'')).join('; also: ');
+    found = 'The reviews <b>did not agree</b>. The concern above was raised by one of them. ' +
+            'Another read the same sentence as: ' + altTxt + '. ' +
+            '<b>Disagreement usually means the sentence is borderline</b>, so this one is worth ' +
+            'your eye more than one they agree on — the concern is shown first deliberately, ' +
+            'because it is easier to dismiss a flag than to notice one you were never shown.';
+  } else if(names.length > 1){
+    found = 'The automated reviews <b>independently agreed</b>. Agreement is a reason to look, ' +
+            'not a reason to skip — they can be wrong in the same way.';
+  } else {
+    found = 'One automated review looked at this sentence. Nothing has cross-checked it.';
+  }
+
+  // Papers are COUNTED and LINKED. A bare "PMID 00000023" means nothing to a reader.
+  const refs = [], seen = {};
+  names.forEach(n => {
+    (eng[n].resolved || []).forEach(r => {
+      const k = r.pmid || r.title;
+      if(k && !seen[k]){ seen[k] = 1; refs.push(r); }
+    });
+  });
+  /* ⛔ NAME THE PAPERS. An earlier version rendered these as "paper 1 · paper 2",
+     which is not a simplification -- it is a REGRESSION. The reader loses the one
+     thing that lets them judge the citation without opening it. Simplify the
+     LANGUAGE, never the EVIDENCE. */
+  const papers = refs.length
+    ? '<p class="synthsrc"><b>What this is based on</b></p>' + refs.map(r =>
+        '<div class="synthcite"><a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(r.pmid || '') +
+        '/" target="_blank" rel="noopener">' + esc(r.title || ('PMID ' + (r.pmid||''))) + '</a>' +
+        (r.journal || r.year ? ' <span class="synthnote">' + esc([r.journal, r.year].filter(Boolean).join(' ')) + '</span>' : '') +
+        (r.design ? '<br><span class="synthnote">' + esc(r.design) + '</span>' : '') +
+        (r.shows  ? '<br><b>Found:</b> ' + esc(r.shows) : '') +
+        (r.why    ? '<br><b>Why it is here:</b> ' + esc(r.why) : '') +
+        '</div>').join('') +
+      '<p class="synthnote">These were found automatically. A paper being listed does not ' +
+      'prove it supports the sentence — open it if the suggestion matters to you.</p>'
+    : '<p class="synthsrc"><b>Nothing was found to support this one.</b> <span class="synthnote">The ' +
+      'suggestion rests on the wording of the sentence alone, which is the weakest case it can make.</span></p>';
+
+  return '<div class="synth">' +
+    '<div class="synthlab">AI review · a suggestion, not a decision</div>' +
+    '<p class="synthrow"><span class="synthk">Issue</span>' + esc(plain.issue) + '</p>' +
+    '<p class="synthrow"><span class="synthk">What we found</span>' + found + '</p>' +
+    '<p class="synthrow"><span class="synthk">Suggested</span><b>' + esc(plain.fix) + '</b></p>' +
+    papers +
+    '<p class="synthfoot">You decide. Nothing here changes the manuscript on its own.</p>' +
+  '</div>';
+}
+
 function engSummary(c){
   const n = Object.keys(usableEngines(c)).length;
-  if(n === 0) return 'no usable suggestion';
-  if(n === 1) return '1 suggestion · evidence, not a decision';
-  return n + ' suggestions · ' + (enginesDisagree(c) ? 'THEY DISAGREE — read this one yourself'
-                                                     : 'same suggestion') + ' · evidence, not a decision';
+  /* Plain English. The old version printed "2 suggestions", which invites the
+     question "two of what" and answers it nowhere a doctor can see. */
+  if(n === 0) return 'nothing usable';
+  if(n === 1) return 'one review, not cross-checked';
+  return enginesDisagree(c) ? 'the reviews disagree — worth your eye'
+                            : 'the reviews agree';
 }
 
 /* One research row per source, under every AI suggestion.
@@ -480,8 +544,13 @@ function researchRows(e){
       '<a class="t" href="https://pubmed.ncbi.nlm.nih.gov/' + pm + '/" target="_blank" rel="noopener">' + t + '</a>' +
       (jr ? ' <span class="jr">' + jr + '</span>' : '') +
       '<div class="ids"><a href="https://pubmed.ncbi.nlm.nih.gov/' + pm + '/" target="_blank" rel="noopener">PMID ' + pm + '</a></div>' +
-      (r.shows ? '<span class="shows">' + esc(r.design || '') + (r.design && r.shows ? ' · ' : '') +
-                 (r.shows ? 'Shows: ' + esc(r.shows) : '') + '</span>' : '') +
+      (r.design ? '<span class="shows">' + esc(r.design) + '</span>' : '') +
+      (r.shows  ? '<span class="shows"><b>What it found:</b> ' + esc(r.shows) + '</span>' : '') +
+      /* ⛔ THE RATIONALE IS THE POINT. A title tells a reviewer WHICH paper; only this
+         tells them WHY it was attached to THIS sentence. Without it there is no way to
+         tell a well-matched citation from a keyword collision -- which is how a paper on
+         the wrong subject ends up under a drug claim and nobody notices. */
+      (r.why    ? '<span class="whycite"><b>Why it is here:</b> ' + esc(r.why) + '</span>' : '') +
       '</div>';
   });
   /* ⛔ THE PROSE SOURCE IS ALWAYS SHOWN, EVEN WHEN SOMETHING RESOLVED.
@@ -570,8 +639,9 @@ function render(){
           it is here so you can see what has already been looked at, not to close the question.</p>
       </div>`:''}
       ${c.engines ? `<div class="eng ${enginesDisagree(c)?'split':''}">
-        <h4>AI suggestions<span class="sum">${engSummary(c)}</span></h4>
+        <h4>AI review<span class="sum">${engSummary(c)}</span></h4>
         ${synthesise(c)}
+        <details class="engdet"><summary>Show the detailed review<span class="engdetnote">— which system said what, confidence, and the raw references</span></summary>
         ${Object.entries(c.engines).map(([name,e]) => `<div class="ai">
           <div class="hd">
             <span class="aichip">AI · ${esc(name)}</span>
@@ -586,6 +656,7 @@ function render(){
             paper <b>exists</b>, not that it supports this sentence</span></div>
           ${researchRows(e)}
         </div>`).join('')}
+        </details>
         ${enginesDisagree(c)?`<p class="caveat">These are AI suggestions, shown as inputs. None is pre-selected below.</p>`:''}
       </div>` : ''}
       ${c.correction ? `<div class="corr">
@@ -817,6 +888,160 @@ who.oninput = () => localStorage.setItem(KEY + '-who', who.value);
 """
 
 
+def _gate(page):
+    """Refuse to write a page that is syntactically valid but semantically dead.
+
+    ⛔ WHY SYNTAX CHECKING WAS NOT ENOUGH. An edit to this file once removed
+    usableEngines() while leaving two calls to it. `node --check` passed --
+    the syntax is perfectly legal -- and the page would have thrown
+    ReferenceError on the first card render. Every card. Silently, because
+    nothing on the page reports a thrown handler.
+
+    That is the same shape as every other failure this project has paid for:
+    the check that ran was not the check that mattered. So this gate does three
+    things in order, and ANY of them failing stops the write:
+      1. there is an executable script at all (not just the JSON data island)
+      2. it parses
+      3. every function it CALLS is actually DEFINED somewhere reachable
+    """
+    import re as _re, subprocess as _sp, tempfile as _tf
+
+    all_blocks = _re.findall(r'<script([^>]*)>(.*?)</script>', page, _re.S | _re.I)
+    blocks = [body for attrs, body in all_blocks
+              if not _re.search(r'\btype\s*=\s*["\']application/json["\']', attrs, _re.I)
+              and body.strip()]
+    if not blocks:
+        raise SystemExit('⛔ BUILD GATE: no executable script in the page. Not written.')
+
+    for i, body in enumerate(blocks):
+        with _tf.NamedTemporaryFile('w', suffix='.js', delete=False) as fh:
+            fh.write(body); tmp = fh.name
+        r = _sp.run(['node', '--check', tmp], capture_output=True, text=True)
+        os.unlink(tmp)
+        if r.returncode != 0:
+            raise SystemExit('⛔ BUILD GATE: script block %d does not parse:\n%s'
+                             % (i, r.stderr[:600]))
+
+    # --- the check node --check cannot do -----------------------------------
+    js = '\n'.join(blocks)
+
+    # ⛔ DEAD END, KEPT AS A WARNING -- see _smoke() below for what replaced it.
+    #    I tried to find undefined references by pattern-matching the source, and
+    #    spent four rounds fighting my own parser: prose in comments ("fired
+    #    repeatedly (toggling...)") looked like calls, CSS inside template literals
+    #    made `var(--ink)` look like a call, and a stray backtick mis-paired the
+    #    template matcher and swallowed the region where linkify() was defined --
+    #    reporting a DEFINED function as missing. Every fix produced a new false
+    #    positive on correct code.
+    #
+    #    The lesson is the one this project keeps paying to relearn: EXERCISE THE
+    #    CODE, DO NOT PATTERN-MATCH IT. A regex approximation of a JS scope analyser
+    #    is a second, worse implementation of something node already does perfectly
+    #    by running the file. _smoke() runs it.
+    _smoke(page)
+
+
+SMOKE_JS = r"""
+// Minimal DOM so the page's script can load and its render path can run.
+// This is NOT a browser -- it is just enough surface that a ReferenceError,
+// a TypeError or a thrown handler surfaces instead of being swallowed.
+const mkEl = () => ({
+  style:{}, dataset:{}, classList:{add(){},remove(){},toggle(){},contains(){return false}},
+  appendChild(){}, removeChild(){}, remove(){}, insertBefore(){},
+  addEventListener(){}, removeEventListener(){}, setAttribute(){}, getAttribute(){return null},
+  querySelector(){return null}, querySelectorAll(){return []},
+  getBoundingClientRect(){return {top:0,bottom:10,left:0,right:10,height:10,width:10}},
+  scrollIntoView(){}, focus(){}, click(){}, closest(){return null},
+  get innerHTML(){return ''}, set innerHTML(v){}, textContent:'', value:'', checked:false,
+  files:[], disabled:false, children:[], parentNode:null,
+});
+// The page reads its data from an embedded JSON island. The stub has to SERVE that
+// island for real -- an empty textContent makes JSON.parse throw, which would fail
+// every build for a reason that has nothing to do with the code being checked.
+let DATA_JSON = '';
+const document = {
+  addEventListener(){}, removeEventListener(){}, createElement:mkEl,
+  getElementById(id){ const el = mkEl(); if (id === 'claims-data') el.textContent = DATA_JSON; return el; },
+  querySelector(sel){ const el = mkEl(); if (String(sel).includes('claims-data')) el.textContent = DATA_JSON; return el; },
+  querySelectorAll(){return []},
+  body:mkEl(), documentElement:mkEl(), readyState:'complete',
+};
+const window = { addEventListener(){}, removeEventListener(){}, innerHeight:900,
+                 scrollTo(){}, location:{hash:'',href:''}, matchMedia(){return {matches:false,addEventListener(){}}} };
+const localStorage = { _d:{}, getItem(k){return this._d[k]||null}, setItem(k,v){this._d[k]=v}, removeItem(k){delete this._d[k]} };
+const navigator = { userAgent:'smoke' };
+globalThis.document = document; globalThis.window = window;
+globalThis.localStorage = localStorage; globalThis.navigator = navigator;
+globalThis.requestAnimationFrame = f => f();
+globalThis.alert = () => {}; globalThis.confirm = () => true;
+
+const fs = require('fs');
+const page = fs.readFileSync(process.argv[2], 'utf8');
+const island = page.match(/<script id="claims-data"[^>]*>([\s\S]*?)<\/script>/i);
+if (island) DATA_JSON = island[1].replace(/\\u003c/g, '<');
+const blocks = [...page.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/gi)]
+  .filter(m => !/\btype\s*=\s*["']application\/json["']/i.test(m[1]) && m[2].trim())
+  .map(m => m[2]);
+if (!blocks.length) { console.error('SMOKE: no executable script'); process.exit(2); }
+
+// 1. LOAD. Catches ReferenceError on any top-level call, and any syntax the parser took
+//    but the engine rejects.
+let scope;
+try {
+  scope = new Function(blocks.join('\n') + '\n; return typeof render === "function" ? {render, CLAIMS: (typeof CLAIMS!=="undefined"?CLAIMS:null)} : {};')();
+} catch (e) {
+  console.error('SMOKE: script threw on load -> ' + e.constructor.name + ': ' + e.message);
+  process.exit(2);
+}
+
+// 2. EXERCISE THE RENDER PATH. Loading proves the file parses and its top level runs;
+//    it does NOT prove a function called only from render() exists. That was the exact
+//    bug: usableEngines was deleted while two calls to it survived, and nothing at load
+//    time touched them.
+if (typeof scope.render === 'function') {
+  try { scope.render(); }
+  catch (e) { console.error('SMOKE: render() threw -> ' + e.constructor.name + ': ' + e.message); process.exit(3); }
+  console.log('SMOKE: loaded and render() ran clean');
+} else {
+  console.log('SMOKE: loaded clean (no render() exported -- load-only check)');
+}
+"""
+
+
+def _smoke(page):
+    """Run the page in node. Do not pattern-match it -- run it.
+
+    ⛔ WHY THIS EXISTS. `node --check` proves a file PARSES. It does not prove the
+    file WORKS. An edit here once deleted usableEngines() and left two calls to it:
+    legal syntax, clean --check, and ReferenceError on every single card render.
+    Nothing on the page reports a thrown handler, so the failure is silent and looks
+    like an empty list.
+
+    I then spent four rounds writing a regex scope analyser to catch it, and each
+    round produced a new false positive on CORRECT code -- prose in comments, CSS
+    inside template literals, a stray backtick swallowing the region where linkify()
+    was defined. A gate that fires on correct code gets switched off, which is worse
+    than no gate.
+
+    So: node already has a perfect JS implementation. Use it. This loads the real
+    script and calls the real render path, which is the only thing that proves the
+    functions render() needs are actually there.
+    """
+    import subprocess as _sp, tempfile as _tf
+    with _tf.NamedTemporaryFile('w', suffix='.html', delete=False) as fh:
+        fh.write(page); html = fh.name
+    with _tf.NamedTemporaryFile('w', suffix='.cjs', delete=False) as fh:
+        fh.write(SMOKE_JS); js = fh.name
+    try:
+        r = _sp.run(['node', js, html], capture_output=True, text=True, timeout=60)
+    finally:
+        os.unlink(html); os.unlink(js)
+    if r.returncode != 0:
+        raise SystemExit('⛔ BUILD GATE: %s\n   Page NOT written.'
+                         % (r.stderr.strip() or r.stdout.strip() or 'node exited %d' % r.returncode))
+    print('   gate: %s' % r.stdout.strip())
+
+
 def main():
     data = json.load(open(os.path.join(HERE, 'claims.json')))
     os.makedirs(SITE, exist_ok=True)
@@ -841,6 +1066,10 @@ def main():
                 .replace('__SRC__', data['source'])
                 .replace('__MD5__', data['source_md5'])
                 .replace('__CLAIMS_JSON__', blob))
+    # ⛔ VALIDATE BEFORE WRITING. A broken page must never reach disk, because a
+    #    stale-but-working index.html is a better artifact than a fresh broken one.
+    _gate(page)
+
     with open(os.path.join(SITE, 'index.html'), 'w') as f:
         f.write(page)
     size = os.path.getsize(os.path.join(SITE, 'index.html'))

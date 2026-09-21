@@ -136,6 +136,91 @@ KIND_RIFF = {
     "advice": "Phrased as guidance, which shifts it from description to recommendation.",
 }
 
+# ---------------------------------------------------------------------------
+# CITATIONS WITH THEIR RATIONALE.
+#
+# ⛔ A BARE IDENTIFIER IS NOT A CITATION. "PMID 00000023" tells a reviewing
+# physician nothing they can act on. The real tool already showed title,
+# journal, year, study design and a "Shows:" line -- and a first pass at
+# simplifying this replaced all of that with "paper 1 · paper 2", which was a
+# regression dressed up as clarity. Simplify the LANGUAGE, never the EVIDENCE.
+#
+# Each citation therefore carries four things, and the fourth is the one that
+# is usually missing everywhere:
+#   design  what kind of study it is, so its weight is visible
+#   shows   what the paper itself reported
+#   why     what it has to do with THIS sentence
+# "why" is the documentation the project owner asked for: not just which paper, but why
+# that paper was thought relevant here. Without it a reader cannot tell a
+# well-matched citation from a keyword collision -- and keyword collisions are
+# exactly how a paper about the wrong subject ends up attached to a drug claim.
+#
+# Every field below describes a SYNTHETIC paper. No real title, no real
+# finding, no real author. The shapes are real; the content is invented.
+# ---------------------------------------------------------------------------
+DESIGNS = [
+    ("Systematic review", "pooled across the published trials"),
+    ("Randomised controlled trial", "the strongest single design here"),
+    ("Cohort study", "observational, so association rather than cause"),
+    ("Case series", "a small number of patients, no comparison group"),
+    ("Laboratory study", "cells or tissue, not people"),
+    ("Animal study", "not yet shown in humans"),
+    ("Narrative review", "a summary, not new data"),
+]
+
+SHOWS = [
+    "an effect in the direction the sentence describes, with wide confidence intervals",
+    "no difference between the groups on the primary outcome",
+    "a benefit confined to the subgroup that had already failed first-line treatment",
+    "a smaller effect than earlier reports, which the authors attribute to blinding",
+    "the mechanism the sentence assumes, but only in cell culture",
+    "an association that did not survive adjustment for confounders",
+    "improvement on a surrogate marker, with no outcome data",
+    "harms at the dose range the sentence mentions",
+]
+
+WHY = {
+    "ok":          "Cited as the direct support for the claim. Scope and population match.",
+    "source":      "The closest published estimate to the figure in the sentence — offered as the "
+                   "citation the sentence is missing, not as confirmation the figure is right.",
+    "population":  "Cited because it defines the population the finding actually came from, which "
+                   "is narrower than the sentence implies.",
+    "preclinical": "Cited to show the stage of the evidence: this is where the claim originates, "
+                   "and it is not a human study.",
+    "misleading":  "Cited because it reports the qualifier the sentence leaves out.",
+    "disputed":    "Cited as the opposing result — it is why this point cannot be stated as settled.",
+    "rewrite":     "Cited to show the gap between what the source supports and what the sentence says.",
+    "notclaim":    "Attached for context only; there is no claim here to support.",
+}
+
+TITLE_A = ["Outcomes", "Response rates", "Tolerability", "Long-term follow-up", "Dose-finding",
+           "Comparative effectiveness", "Mechanistic evaluation", "Safety profile"]
+TITLE_B = ["in previously treated patients", "in a community setting", "after first-line failure",
+           "in an unselected population", "in a preclinical model", "across three centres",
+           "in older adults", "at standard dosing"]
+JOURNALS = ["J. Sample Oncology", "Demo Clinical Research", "Review of Invented Medicine",
+            "Synthetic Trials Quarterly", "Journal of Placeholder Studies"]
+
+
+def rich_sources(rng, verdict):
+    """Zero, one or two fully-documented synthetic citations."""
+    if verdict == "notclaim" or rng.random() < 0.18:
+        return []                       # exercises the no-source state
+    n = 2 if rng.random() < 0.35 else 1
+    out = []
+    for _ in range(n):
+        design, weight = rng.choice(DESIGNS)
+        out.append({
+            "pmid":    "%08d" % rng.randint(1, 25),
+            "title":   "%s %s" % (rng.choice(TITLE_A), rng.choice(TITLE_B)),
+            "journal": rng.choice(JOURNALS),
+            "year":    str(rng.randint(2009, 2025)),
+            "design":  "%s — %s" % (design, weight),
+            "shows":   rng.choice(SHOWS),
+            "why":     WHY.get(verdict, WHY["ok"]),
+        })
+    return out
+
 CONFIDENCE = ["low", "medium", "high"]
 
 
@@ -179,7 +264,10 @@ def main():
             verdict = block.get("verdict", "ok")
             block["why"] = build_why(rng, verdict, c.get("kinds"))
             block["confidence"] = rng.choice(CONFIDENCE)
-            block["source"] = synth_source(rng, verdict)
+            block["resolved"] = rich_sources(rng, verdict)
+            # e.source is the engine's own prose citation string. It is shown even when
+            # something resolved -- see the comment on researchRows in build_site.py.
+            block["source"] = "" if block["resolved"] else synth_source(rng, verdict)
             touched += 1
 
     path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
@@ -188,8 +276,17 @@ def main():
     print(f"rewrote {touched} engine blocks across {sum(1 for c in claims if c.get('engines'))} claims")
     print(f"reasoning length: min {min(lens)}, median {sorted(lens)[len(lens)//2]}, max {max(lens)} chars")
     print(f"(was 118 chars on every single one)")
+    # ⛔ COUNT WHAT YOU MEAN. The first version of this line tested `not b["source"]`,
+    # but a block with rich resolved[] citations deliberately has an EMPTY source
+    # string -- so every well-cited block was counted as uncited and the number
+    # jumped from 52 to 158. The statistic was wrong, not the data.
     blank = sum(1 for c in claims if c.get("engines")
-                for b in c["engines"].values() if not b["source"])
+                for b in c["engines"].values() if not b["resolved"] and not b["source"])
+    rich = sum(1 for c in claims if c.get("engines")
+               for b in c["engines"].values() if b["resolved"])
+    two = sum(1 for c in claims if c.get("engines")
+              for b in c["engines"].values() if len(b["resolved"]) > 1)
+    print(f"blocks with documented citations: {rich} ({two} carry two)")
     print(f"blocks citing nothing: {blank} — the no-source card state is exercised")
 
 

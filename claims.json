@@ -661,13 +661,25 @@
      "verdict": "ok",
      "confidence": "low",
      "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": "PMID 00000023"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000013",
+       "title": "Comparative effectiveness in an unselected population",
+       "journal": "Review of Invented Medicine",
+       "year": "2019",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     },
     "grok": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": "PMID 00000011"
+     "confidence": "high",
+     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it.",
+     "source": "PMID 00000007",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -690,9 +702,20 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000013"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000010",
+       "title": "Safety profile after first-line failure",
+       "journal": "J. Sample Oncology",
+       "year": "2022",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    }
   },
@@ -727,9 +750,20 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "low",
-     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
-     "source": "PMID 00000021"
+     "confidence": "high",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000016",
+       "title": "Long-term follow-up after first-line failure",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2014",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    },
    "correction": {
@@ -760,13 +794,25 @@
      "verdict": "source",
      "confidence": "low",
      "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
-     "source": "PMID 00000014"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000002",
+       "title": "Long-term follow-up in an unselected population",
+       "journal": "J. Sample Oncology",
+       "year": "2023",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
-     "source": "PMID 00000019"
+     "source": "PMID 00000022",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -931,8 +977,19 @@
     "codex": {
      "verdict": "disputed",
      "confidence": "low",
-     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
-     "source": "PMID 00000020"
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000005",
+       "title": "Safety profile in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2021",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -955,8 +1012,28 @@
     "codex": {
      "verdict": "disputed",
      "confidence": "low",
-     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
-     "source": "NCT00000019"
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Dose-finding in older adults",
+       "journal": "Review of Invented Medicine",
+       "year": "2013",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      },
+      {
+       "pmid": "00000006",
+       "title": "Long-term follow-up in previously treated patients",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2013",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -978,9 +1055,20 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": "PMID 00000007"
+     "confidence": "medium",
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000018",
+       "title": "Dose-finding in a community setting",
+       "journal": "Demo Clinical Research",
+       "year": "2012",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -1014,9 +1102,10 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
-     "source": "PMID 00000022"
+     "confidence": "medium",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "PMID 00000010",
+     "resolved": []
     }
    }
   },
@@ -1066,9 +1155,20 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "high",
-     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
-     "source": "PMID 00000023; PMID 00000013"
+     "confidence": "medium",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000023",
+       "title": "Outcomes at standard dosing",
+       "journal": "Demo Clinical Research",
+       "year": "2025",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    }
   },
@@ -1130,9 +1230,29 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": "PMID 00000007"
+     "confidence": "high",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000023",
+       "title": "Outcomes in a community setting",
+       "journal": "J. Sample Oncology",
+       "year": "2013",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000009",
+       "title": "Safety profile in previously treated patients",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2018",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -1246,15 +1366,17 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "high",
-     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": ""
+     "confidence": "medium",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
-     "source": "PMID 00000022"
+     "confidence": "medium",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000015",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -1321,9 +1443,20 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
-     "source": "NCT00000013"
+     "confidence": "high",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000024",
+       "title": "Safety profile in older adults",
+       "journal": "Review of Invented Medicine",
+       "year": "2021",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -1405,9 +1538,20 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000018"
+     "confidence": "low",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000017",
+       "title": "Response rates across three centres",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2018",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -1457,9 +1601,29 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": "PMID 00000005"
+     "confidence": "high",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000008",
+       "title": "Long-term follow-up at standard dosing",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2025",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000002",
+       "title": "Response rates in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2009",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -1509,15 +1673,37 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
-     "source": "PMID 00000017"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000015",
+       "title": "Tolerability in a preclinical model",
+       "journal": "Demo Clinical Research",
+       "year": "2019",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     },
     "grok": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": "NCT00000005"
+     "confidence": "high",
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000013",
+       "title": "Comparative effectiveness at standard dosing",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2023",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -1596,14 +1782,45 @@
     "codex": {
      "verdict": "ok",
      "confidence": "low",
-     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
-     "source": "NCT00000001"
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000004",
+       "title": "Mechanistic evaluation in a community setting",
+       "journal": "Demo Clinical Research",
+       "year": "2009",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000016",
+       "title": "Comparative effectiveness in a community setting",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2012",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
-     "source": "PMID 00000021"
+     "confidence": "low",
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Response rates after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2015",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -1682,9 +1899,20 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": ""
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Tolerability in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2010",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -1734,15 +1962,37 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
-     "source": "NCT00000016"
+     "confidence": "low",
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000023",
+       "title": "Outcomes in a preclinical model",
+       "journal": "Review of Invented Medicine",
+       "year": "2012",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     },
     "grok": {
      "verdict": "source",
-     "confidence": "high",
+     "confidence": "medium",
      "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
-     "source": "NCT00000003"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000007",
+       "title": "Tolerability in a community setting",
+       "journal": "Review of Invented Medicine",
+       "year": "2020",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -1777,9 +2027,29 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
-     "source": "PMID 00000019; PMID 00000013"
+     "confidence": "medium",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000002",
+       "title": "Dose-finding in older adults",
+       "journal": "J. Sample Oncology",
+       "year": "2016",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      },
+      {
+       "pmid": "00000019",
+       "title": "Safety profile across three centres",
+       "journal": "Demo Clinical Research",
+       "year": "2014",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -1802,8 +2072,19 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": "PMID 00000025"
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000018",
+       "title": "Safety profile in previously treated patients",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2019",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -1837,15 +2118,17 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
-     "source": "NCT00000007"
+     "confidence": "medium",
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "PMID 00000004",
+     "resolved": []
     },
     "grok": {
      "verdict": "disputed",
      "confidence": "low",
      "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
-     "source": "NCT00000023"
+     "source": "PMID 00000016; PMID 00000023",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -1936,9 +2219,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "Narrative rather than claim. No source is required and none is missing.",
-     "source": ""
+     "confidence": "high",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -1960,9 +2244,20 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
+     "confidence": "low",
      "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
-     "source": "NCT00000024"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000014",
+       "title": "Long-term follow-up at standard dosing",
+       "journal": "Review of Invented Medicine",
+       "year": "2014",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -2053,8 +2348,9 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "high",
-     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
-     "source": "PMID 00000023; PMID 00000019"
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "NCT00000015",
+     "resolved": []
     }
    }
   },
@@ -2220,9 +2516,29 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "PMID 00000025"
+     "confidence": "medium",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Long-term follow-up in previously treated patients",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2021",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      },
+      {
+       "pmid": "00000009",
+       "title": "Mechanistic evaluation in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2010",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -2246,13 +2562,34 @@
      "verdict": "rewrite",
      "confidence": "high",
      "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
-     "source": "PMID 00000018"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000016",
+       "title": "Response rates across three centres",
+       "journal": "Review of Invented Medicine",
+       "year": "2017",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      },
+      {
+       "pmid": "00000022",
+       "title": "Response rates at standard dosing",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2022",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     },
     "grok": {
      "verdict": "disputed",
      "confidence": "low",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "NCT00000021"
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "PMID 00000006",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -2291,15 +2628,37 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000015"
+     "confidence": "high",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000010",
+       "title": "Mechanistic evaluation after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2012",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     },
     "grok": {
      "verdict": "misleading",
      "confidence": "high",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": "NCT00000025"
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000018",
+       "title": "Dose-finding in an unselected population",
+       "journal": "J. Sample Oncology",
+       "year": "2023",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -2338,9 +2697,20 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": ""
+     "confidence": "high",
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000011",
+       "title": "Tolerability in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2021",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -2374,9 +2744,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "low",
-     "why": "Narrative rather than claim. No source is required and none is missing. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
-     "source": ""
+     "confidence": "high",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -2414,9 +2785,20 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
-     "source": "PMID 00000006"
+     "confidence": "low",
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000018",
+       "title": "Response rates in previously treated patients",
+       "journal": "Demo Clinical Research",
+       "year": "2023",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -2438,9 +2820,20 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
-     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced.",
-     "source": "PMID 00000011; PMID 00000013"
+     "confidence": "low",
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000017",
+       "title": "Response rates in an unselected population",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2024",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -2462,9 +2855,20 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
-     "source": "PMID 00000003"
+     "confidence": "low",
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000021",
+       "title": "Response rates in an unselected population",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2019",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -2486,9 +2890,20 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000017; PMID 00000003"
+     "confidence": "high",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000021",
+       "title": "Dose-finding at standard dosing",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2024",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -2576,13 +2991,15 @@
      "verdict": "notclaim",
      "confidence": "high",
      "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
-     "source": ""
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "high",
+     "confidence": "medium",
      "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
-     "source": "PMID 00000024"
+     "source": "PMID 00000005; PMID 00000004",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -2606,14 +3023,45 @@
     "codex": {
      "verdict": "disputed",
      "confidence": "high",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "PMID 00000011"
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000010",
+       "title": "Long-term follow-up in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2013",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "low",
-     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
-     "source": "PMID 00000017"
+     "confidence": "medium",
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000024",
+       "title": "Outcomes in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2019",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000010",
+       "title": "Comparative effectiveness after first-line failure",
+       "journal": "J. Sample Oncology",
+       "year": "2021",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -2745,14 +3193,36 @@
     "codex": {
      "verdict": "ok",
      "confidence": "high",
-     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
-     "source": "PMID 00000017"
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000006",
+       "title": "Mechanistic evaluation in a community setting",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2025",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     },
     "grok": {
      "verdict": "source",
      "confidence": "low",
      "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
-     "source": "PMID 00000002"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000022",
+       "title": "Tolerability in older adults",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2010",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -2892,15 +3362,27 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
+     "confidence": "medium",
      "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": ""
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "rewrite",
      "confidence": "medium",
      "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000023"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000005",
+       "title": "Outcomes after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2021",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -2951,15 +3433,27 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000006"
+     "confidence": "high",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "medium",
+     "confidence": "low",
      "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
-     "source": ""
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000008",
+       "title": "Response rates at standard dosing",
+       "journal": "J. Sample Oncology",
+       "year": "2013",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -2983,8 +3477,9 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
-     "source": ""
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -3046,9 +3541,20 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
-     "source": ""
+     "confidence": "low",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000023",
+       "title": "Outcomes in older adults",
+       "journal": "Review of Invented Medicine",
+       "year": "2024",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    }
   },
@@ -3082,15 +3588,37 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
-     "source": "PMID 00000013; PMID 00000024"
+     "confidence": "high",
+     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Outcomes across three centres",
+       "journal": "Demo Clinical Research",
+       "year": "2021",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     },
     "grok": {
      "verdict": "rewrite",
-     "confidence": "medium",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": "PMID 00000015"
+     "confidence": "high",
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000011",
+       "title": "Mechanistic evaluation after first-line failure",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2018",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -3125,9 +3653,10 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "high",
+     "confidence": "low",
      "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": ""
+     "source": "PMID 00000014",
+     "resolved": []
     }
    }
   },
@@ -3205,9 +3734,10 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
-     "source": "PMID 00000004; PMID 00000014"
+     "confidence": "low",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -3269,9 +3799,29 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
-     "source": ""
+     "confidence": "high",
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000014",
+       "title": "Dose-finding across three centres",
+       "journal": "Demo Clinical Research",
+       "year": "2010",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000005",
+       "title": "Dose-finding after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2022",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -3317,9 +3867,20 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
+     "confidence": "low",
      "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000020"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000020",
+       "title": "Response rates in a preclinical model",
+       "journal": "Review of Invented Medicine",
+       "year": "2012",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -3354,8 +3915,9 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Narrative rather than claim. No source is required and none is missing.",
-     "source": ""
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -3437,9 +3999,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
+     "confidence": "medium",
      "why": "Narrative rather than claim. No source is required and none is missing.",
-     "source": ""
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -3565,9 +4128,10 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": "PMID 00000007"
+     "confidence": "medium",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -3629,9 +4193,20 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "PMID 00000025"
+     "confidence": "medium",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000020",
+       "title": "Response rates in previously treated patients",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2021",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -3669,15 +4244,37 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000021"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Comparative effectiveness in a community setting",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2011",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "high",
+     "confidence": "medium",
      "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
-     "source": "PMID 00000023"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000001",
+       "title": "Mechanistic evaluation in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2016",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -3702,13 +4299,44 @@
      "verdict": "rewrite",
      "confidence": "high",
      "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
-     "source": ""
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000006",
+       "title": "Dose-finding in a preclinical model",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2025",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "low",
-     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": ""
+     "confidence": "high",
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Tolerability across three centres",
+       "journal": "Demo Clinical Research",
+       "year": "2023",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      },
+      {
+       "pmid": "00000014",
+       "title": "Tolerability in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2021",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -3731,9 +4359,20 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
-     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
-     "source": ""
+     "confidence": "medium",
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000015",
+       "title": "Dose-finding in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2022",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -3811,9 +4450,20 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
+     "confidence": "high",
      "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000009"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000001",
+       "title": "Dose-finding in a community setting",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2019",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -4003,15 +4653,27 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000014"
+     "confidence": "medium",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000005",
+       "title": "Comparative effectiveness after first-line failure",
+       "journal": "J. Sample Oncology",
+       "year": "2021",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     },
     "grok": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "Narrative rather than claim. No source is required and none is missing.",
-     "source": ""
+     "confidence": "high",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -4034,9 +4696,20 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "low",
-     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
-     "source": ""
+     "confidence": "medium",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000016",
+       "title": "Safety profile in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2017",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    }
   },
@@ -4058,9 +4731,10 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
-     "source": "PMID 00000010"
+     "confidence": "medium",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "PMID 00000017",
+     "resolved": []
     }
    }
   },
@@ -4082,9 +4756,10 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": ""
+     "confidence": "low",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": "PMID 00000002",
+     "resolved": []
     }
    }
   },
@@ -4142,15 +4817,27 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
+     "confidence": "high",
      "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": "PMID 00000007"
+     "source": "PMID 00000010; PMID 00000001",
+     "resolved": []
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
-     "source": "PMID 00000023"
+     "confidence": "low",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000007",
+       "title": "Mechanistic evaluation after first-line failure",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2015",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -4197,9 +4884,29 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
-     "source": "PMID 00000008; PMID 00000006"
+     "confidence": "low",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000024",
+       "title": "Safety profile in older adults",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2024",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      },
+      {
+       "pmid": "00000009",
+       "title": "Safety profile in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2009",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -4222,14 +4929,35 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": "PMID 00000022"
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced.",
+     "source": "PMID 00000020",
+     "resolved": []
     },
     "grok": {
      "verdict": "rewrite",
      "confidence": "medium",
-     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000002"
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Mechanistic evaluation in a preclinical model",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2010",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      },
+      {
+       "pmid": "00000017",
+       "title": "Comparative effectiveness across three centres",
+       "journal": "J. Sample Oncology",
+       "year": "2022",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -4308,8 +5036,19 @@
     "codex": {
      "verdict": "ok",
      "confidence": "low",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
-     "source": "NCT00000004"
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000005",
+       "title": "Long-term follow-up in a community setting",
+       "journal": "Demo Clinical Research",
+       "year": "2010",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -4343,9 +5082,29 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
-     "source": "PMID 00000016; PMID 00000023"
+     "confidence": "high",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000003",
+       "title": "Safety profile in an unselected population",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2023",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      },
+      {
+       "pmid": "00000017",
+       "title": "Tolerability in previously treated patients",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2011",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    }
   },
@@ -4440,9 +5199,20 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "PMID 00000019"
+     "confidence": "high",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000008",
+       "title": "Outcomes across three centres",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2009",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -4545,8 +5315,28 @@
     "codex": {
      "verdict": "population",
      "confidence": "low",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
-     "source": "PMID 00000015; PMID 00000018"
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000007",
+       "title": "Comparative effectiveness across three centres",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2023",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      },
+      {
+       "pmid": "00000008",
+       "title": "Tolerability in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2015",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -4568,15 +5358,17 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
+     "confidence": "low",
      "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "NCT00000011"
+     "source": "PMID 00000010",
+     "resolved": []
     },
     "grok": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
-     "source": ""
+     "confidence": "medium",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": "",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -4716,14 +5508,54 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": "PMID 00000001"
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Response rates across three centres",
+       "journal": "J. Sample Oncology",
+       "year": "2014",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      },
+      {
+       "pmid": "00000014",
+       "title": "Comparative effectiveness across three centres",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2021",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     },
     "grok": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000003; PMID 00000016"
+     "confidence": "high",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000015",
+       "title": "Tolerability after first-line failure",
+       "journal": "Demo Clinical Research",
+       "year": "2023",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      },
+      {
+       "pmid": "00000016",
+       "title": "Mechanistic evaluation in previously treated patients",
+       "journal": "Demo Clinical Research",
+       "year": "2025",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -4862,9 +5694,20 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "PMID 00000016; PMID 00000009"
+     "confidence": "medium",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000024",
+       "title": "Outcomes in older adults",
+       "journal": "J. Sample Oncology",
+       "year": "2011",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -4902,9 +5745,10 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
-     "source": "NCT00000007"
+     "confidence": "low",
+     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
+     "source": "PMID 00000004; PMID 00000019",
+     "resolved": []
     }
    }
   },
@@ -4927,8 +5771,9 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
-     "source": ""
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -4962,15 +5807,36 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
-     "source": "PMID 00000016; PMID 00000003"
+     "confidence": "low",
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "source",
      "confidence": "medium",
-     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
-     "source": "PMID 00000016"
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000003",
+       "title": "Safety profile after first-line failure",
+       "journal": "Review of Invented Medicine",
+       "year": "2022",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      },
+      {
+       "pmid": "00000008",
+       "title": "Outcomes in previously treated patients",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2022",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    }
   },
@@ -5036,9 +5902,29 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "PMID 00000023"
+     "confidence": "medium",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000016",
+       "title": "Comparative effectiveness in a community setting",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2018",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      },
+      {
+       "pmid": "00000023",
+       "title": "Long-term follow-up across three centres",
+       "journal": "Review of Invented Medicine",
+       "year": "2021",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -5092,9 +5978,20 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000005; PMID 00000017"
+     "confidence": "high",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000007",
+       "title": "Dose-finding at standard dosing",
+       "journal": "Review of Invented Medicine",
+       "year": "2022",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -5116,9 +6013,29 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
-     "source": "PMID 00000020"
+     "confidence": "high",
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Dose-finding in previously treated patients",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2011",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      },
+      {
+       "pmid": "00000023",
+       "title": "Long-term follow-up across three centres",
+       "journal": "Demo Clinical Research",
+       "year": "2020",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -5140,9 +6057,29 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000014"
+     "confidence": "low",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000013",
+       "title": "Response rates at standard dosing",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2013",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      },
+      {
+       "pmid": "00000024",
+       "title": "Safety profile in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2020",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -5196,9 +6133,29 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000011"
+     "confidence": "high",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000013",
+       "title": "Tolerability in a community setting",
+       "journal": "J. Sample Oncology",
+       "year": "2012",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000014",
+       "title": "Comparative effectiveness in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2010",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -5237,14 +6194,26 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "high",
-     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
-     "source": "PMID 00000014"
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000014",
+       "title": "Safety profile in older adults",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2019",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     },
     "grok": {
      "verdict": "source",
-     "confidence": "medium",
-     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "NCT00000022"
+     "confidence": "low",
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "PMID 00000013",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -5284,14 +6253,35 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": ""
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "ok",
      "confidence": "high",
-     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
-     "source": "PMID 00000015; PMID 00000013"
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000013",
+       "title": "Long-term follow-up in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2025",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000010",
+       "title": "Long-term follow-up in a community setting",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2024",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -5315,8 +6305,19 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
-     "source": ""
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000013",
+       "title": "Safety profile in an unselected population",
+       "journal": "J. Sample Oncology",
+       "year": "2020",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -5430,15 +6431,27 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "Narrative rather than claim. No source is required and none is missing.",
-     "source": ""
+     "confidence": "medium",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "population",
-     "confidence": "high",
-     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": "NCT00000003"
+     "confidence": "medium",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000019",
+       "title": "Long-term follow-up in older adults",
+       "journal": "Demo Clinical Research",
+       "year": "2016",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -5463,7 +6476,8 @@
      "verdict": "population",
      "confidence": "medium",
      "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words.",
-     "source": "PMID 00000008; PMID 00000015"
+     "source": "NCT00000019",
+     "resolved": []
     }
    }
   },
@@ -5569,9 +6583,29 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "medium",
-     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
-     "source": "PMID 00000018"
+     "confidence": "low",
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000001",
+       "title": "Tolerability in a preclinical model",
+       "journal": "J. Sample Oncology",
+       "year": "2017",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      },
+      {
+       "pmid": "00000004",
+       "title": "Safety profile in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2016",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    }
   },
@@ -5605,9 +6639,20 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": "PMID 00000003"
+     "confidence": "medium",
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000007",
+       "title": "Tolerability across three centres",
+       "journal": "Review of Invented Medicine",
+       "year": "2025",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -5631,7 +6676,18 @@
      "verdict": "disputed",
      "confidence": "high",
      "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not.",
-     "source": "PMID 00000009"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000021",
+       "title": "Mechanistic evaluation in older adults",
+       "journal": "J. Sample Oncology",
+       "year": "2010",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -5655,13 +6711,53 @@
      "verdict": "ok",
      "confidence": "high",
      "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": ""
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000022",
+       "title": "Long-term follow-up after first-line failure",
+       "journal": "J. Sample Oncology",
+       "year": "2020",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000021",
+       "title": "Dose-finding after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2011",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     },
     "grok": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": ""
+     "confidence": "high",
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000012",
+       "title": "Outcomes in an unselected population",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2012",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      },
+      {
+       "pmid": "00000007",
+       "title": "Outcomes in a community setting",
+       "journal": "Review of Invented Medicine",
+       "year": "2016",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -5684,9 +6780,20 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": ""
+     "confidence": "medium",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000018",
+       "title": "Safety profile in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2019",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -5724,9 +6831,29 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "low",
+     "confidence": "medium",
      "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
-     "source": "PMID 00000011"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000021",
+       "title": "Tolerability in an unselected population",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2009",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000012",
+       "title": "Safety profile in older adults",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2022",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -5760,15 +6887,46 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "low",
-     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
-     "source": "NCT00000019"
+     "confidence": "high",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000002",
+       "title": "Long-term follow-up in previously treated patients",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2013",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      },
+      {
+       "pmid": "00000013",
+       "title": "Response rates in previously treated patients",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2013",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     },
     "grok": {
      "verdict": "population",
      "confidence": "high",
-     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": "PMID 00000009"
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000022",
+       "title": "Long-term follow-up after first-line failure",
+       "journal": "Demo Clinical Research",
+       "year": "2014",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -5792,14 +6950,16 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "medium",
-     "why": "Narrative rather than claim. No source is required and none is missing. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": ""
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": "PMID 00000014"
+     "confidence": "high",
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "PMID 00000011",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -5851,14 +7011,45 @@
     "codex": {
      "verdict": "ok",
      "confidence": "medium",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000004; PMID 00000016"
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000020",
+       "title": "Mechanistic evaluation in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2013",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000018",
+       "title": "Response rates across three centres",
+       "journal": "Demo Clinical Research",
+       "year": "2024",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     },
     "grok": {
      "verdict": "misleading",
-     "confidence": "high",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": "PMID 00000010; PMID 00000013"
+     "confidence": "low",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000017",
+       "title": "Response rates in a community setting",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2019",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -5881,9 +7072,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "low",
+     "confidence": "high",
      "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
-     "source": ""
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -5938,8 +7130,19 @@
     "codex": {
      "verdict": "ok",
      "confidence": "low",
-     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
-     "source": "PMID 00000007"
+     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000009",
+       "title": "Mechanistic evaluation after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2020",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -5961,9 +7164,20 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
-     "source": ""
+     "confidence": "low",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000023",
+       "title": "Mechanistic evaluation across three centres",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2023",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -5985,9 +7199,20 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "high",
-     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
-     "source": ""
+     "confidence": "medium",
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000003",
+       "title": "Outcomes after first-line failure",
+       "journal": "J. Sample Oncology",
+       "year": "2012",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -6026,8 +7251,19 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "medium",
-     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "PMID 00000010"
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Long-term follow-up at standard dosing",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2014",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -6087,8 +7323,9 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "high",
-     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
-     "source": "PMID 00000021"
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
+     "source": "PMID 00000025",
+     "resolved": []
     }
    }
   },
@@ -6134,9 +7371,29 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words.",
-     "source": "PMID 00000002"
+     "confidence": "low",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000023",
+       "title": "Outcomes at standard dosing",
+       "journal": "J. Sample Oncology",
+       "year": "2011",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      },
+      {
+       "pmid": "00000022",
+       "title": "Comparative effectiveness at standard dosing",
+       "journal": "Demo Clinical Research",
+       "year": "2020",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -6158,9 +7415,20 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "high",
-     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000006; PMID 00000013"
+     "confidence": "low",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000020",
+       "title": "Dose-finding in a preclinical model",
+       "journal": "Demo Clinical Research",
+       "year": "2015",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -6250,9 +7518,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
-     "source": ""
+     "confidence": "low",
+     "why": "Narrative rather than claim. No source is required and none is missing. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -6331,8 +7600,9 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "high",
-     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
-     "source": ""
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "PMID 00000002; PMID 00000008",
+     "resolved": []
     }
    }
   },
@@ -6366,9 +7636,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
+     "confidence": "low",
      "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
-     "source": ""
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -6474,9 +7745,29 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "low",
+     "confidence": "high",
      "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000024; PMID 00000002"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Safety profile across three centres",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2023",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000012",
+       "title": "Response rates in an unselected population",
+       "journal": "Demo Clinical Research",
+       "year": "2023",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -6515,14 +7806,26 @@
     "codex": {
      "verdict": "source",
      "confidence": "medium",
-     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
-     "source": "NCT00000018"
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
+     "source": "NCT00000018",
+     "resolved": []
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
-     "source": "PMID 00000001"
+     "confidence": "medium",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000014",
+       "title": "Tolerability after first-line failure",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2017",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -6545,15 +7848,37 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
-     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": "PMID 00000016"
+     "confidence": "low",
+     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000011",
+       "title": "Outcomes in an unselected population",
+       "journal": "J. Sample Oncology",
+       "year": "2017",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     },
     "grok": {
      "verdict": "source",
      "confidence": "low",
-     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out.",
-     "source": "NCT00000025"
+     "why": "The figure is stated without attribution. Nothing in the paragraph points to where it came from, so a reader cannot check it and a fact-checker cannot confirm it. Either a citation goes in or the number comes out. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000004",
+       "title": "Safety profile at standard dosing",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2011",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -6576,9 +7901,29 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": "NCT00000008"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000007",
+       "title": "Outcomes at standard dosing",
+       "journal": "J. Sample Oncology",
+       "year": "2010",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      },
+      {
+       "pmid": "00000020",
+       "title": "Dose-finding across three centres",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2010",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    }
   },
@@ -6656,15 +8001,36 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "low",
-     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "NCT00000017"
+     "confidence": "medium",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000014",
+       "title": "Tolerability in a preclinical model",
+       "journal": "J. Sample Oncology",
+       "year": "2011",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      },
+      {
+       "pmid": "00000001",
+       "title": "Outcomes in an unselected population",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2009",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     },
     "grok": {
      "verdict": "notclaim",
      "confidence": "low",
-     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": ""
+     "why": "Narrative rather than claim. No source is required and none is missing.",
+     "source": "",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -6715,9 +8081,20 @@
    "engines": {
     "codex": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
-     "source": ""
+     "confidence": "low",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000018",
+       "title": "Mechanistic evaluation in a community setting",
+       "journal": "Demo Clinical Research",
+       "year": "2025",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -6755,15 +8132,37 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "high",
+     "confidence": "medium",
      "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
-     "source": "PMID 00000016; PMID 00000014"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000022",
+       "title": "Mechanistic evaluation after first-line failure",
+       "journal": "Review of Invented Medicine",
+       "year": "2010",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "high",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
-     "source": "PMID 00000020"
+     "confidence": "low",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000001",
+       "title": "Dose-finding in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2025",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -6786,9 +8185,10 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "low",
-     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
-     "source": "PMID 00000018"
+     "confidence": "medium",
+     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
+     "source": "PMID 00000003; PMID 00000006",
+     "resolved": []
     }
    }
   },
@@ -6886,15 +8286,46 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
-     "source": ""
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000013",
+       "title": "Mechanistic evaluation after first-line failure",
+       "journal": "Demo Clinical Research",
+       "year": "2016",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      },
+      {
+       "pmid": "00000001",
+       "title": "Dose-finding in a preclinical model",
+       "journal": "Review of Invented Medicine",
+       "year": "2009",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     },
     "grok": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it. This is a safety statement, which raises the bar: an omission here is not symmetrical with an overstatement.",
-     "source": "PMID 00000011"
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000017",
+       "title": "Mechanistic evaluation in previously treated patients",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2023",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -6934,8 +8365,19 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "low",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": "PMID 00000010"
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000012",
+       "title": "Safety profile in an unselected population",
+       "journal": "Review of Invented Medicine",
+       "year": "2014",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -7066,8 +8508,19 @@
     "codex": {
      "verdict": "population",
      "confidence": "high",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
-     "source": ""
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000008",
+       "title": "Response rates across three centres",
+       "journal": "Demo Clinical Research",
+       "year": "2025",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -7129,15 +8582,36 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000022"
+     "confidence": "low",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "ok",
      "confidence": "high",
-     "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
-     "source": ""
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000024",
+       "title": "Tolerability in previously treated patients",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2014",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000019",
+       "title": "Mechanistic evaluation at standard dosing",
+       "journal": "J. Sample Oncology",
+       "year": "2016",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -7221,14 +8695,35 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": ""
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
-     "source": "PMID 00000022; PMID 00000016"
+     "confidence": "low",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000016",
+       "title": "Safety profile in a preclinical model",
+       "journal": "Review of Invented Medicine",
+       "year": "2013",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      },
+      {
+       "pmid": "00000018",
+       "title": "Safety profile in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2022",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -7251,9 +8746,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "medium",
-     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
-     "source": ""
+     "confidence": "low",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -7275,9 +8771,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "low",
+     "confidence": "medium",
      "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
-     "source": ""
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -7339,9 +8836,10 @@
    "engines": {
     "codex": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact.",
-     "source": "PMID 00000009"
+     "confidence": "medium",
+     "why": "There is a genuine dispute here. The sentence is defensible as one position among several but is not written as a position -- it is written as a fact. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -7427,9 +8925,29 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "low",
-     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000016"
+     "confidence": "medium",
+     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000016",
+       "title": "Response rates in older adults",
+       "journal": "J. Sample Oncology",
+       "year": "2021",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      },
+      {
+       "pmid": "00000007",
+       "title": "Outcomes in an unselected population",
+       "journal": "J. Sample Oncology",
+       "year": "2018",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -7451,15 +8969,46 @@
    "engines": {
     "codex": {
      "verdict": "rewrite",
-     "confidence": "medium",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": ""
+     "confidence": "low",
+     "why": "The underlying point is supportable but the sentence cannot be repaired by adding a citation. The structure is what causes the problem, so this needs rewriting rather than annotating. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000018",
+       "title": "Tolerability at standard dosing",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2019",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      },
+      {
+       "pmid": "00000020",
+       "title": "Comparative effectiveness in a community setting",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2012",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     },
     "grok": {
      "verdict": "ok",
-     "confidence": "medium",
-     "why": "The sentence stays inside what its source supports. It names the effect, does not quantify it, and does not extend it to a group the underlying work did not study. Nothing here needs to change.",
-     "source": "PMID 00000020"
+     "confidence": "high",
+     "why": "Checked against the citation and the surrounding paragraph. The claim and the source agree on scope, and the sentence does not borrow authority from the paragraph above it. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000001",
+       "title": "Tolerability at standard dosing",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2022",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -7507,8 +9056,9 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "high",
-     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": ""
+     "why": "Narrative rather than claim. No source is required and none is missing. Phrased as guidance, which shifts it from description to recommendation.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -7606,9 +9156,20 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "low",
+     "confidence": "medium",
      "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage.",
-     "source": "PMID 00000016"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000004",
+       "title": "Response rates across three centres",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2019",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    }
   },
@@ -7647,14 +9208,54 @@
     "codex": {
      "verdict": "rewrite",
      "confidence": "high",
-     "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not.",
-     "source": "PMID 00000025"
+     "why": "This should be rewritten. As written it carries more certainty than any single source behind it, and trimming will leave the sentence unbalanced.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000001",
+       "title": "Tolerability in a community setting",
+       "journal": "Demo Clinical Research",
+       "year": "2018",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      },
+      {
+       "pmid": "00000018",
+       "title": "Comparative effectiveness in previously treated patients",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2023",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     },
     "grok": {
      "verdict": "misleading",
      "confidence": "high",
      "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
-     "source": "PMID 00000009"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000017",
+       "title": "Comparative effectiveness in older adults",
+       "journal": "J. Sample Oncology",
+       "year": "2013",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000024",
+       "title": "Comparative effectiveness after first-line failure",
+       "journal": "Review of Invented Medicine",
+       "year": "2013",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -7690,14 +9291,45 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000001"
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000004",
+       "title": "Tolerability after first-line failure",
+       "journal": "J. Sample Oncology",
+       "year": "2018",
+       "design": "Narrative review — a summary, not new data",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000011",
+       "title": "Dose-finding in older adults",
+       "journal": "Review of Invented Medicine",
+       "year": "2020",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     },
     "grok": {
      "verdict": "disputed",
-     "confidence": "high",
-     "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing.",
-     "source": "PMID 00000020; PMID 00000022"
+     "confidence": "medium",
+     "why": "This is contested in the literature and the sentence presents it as settled. Reporting the disagreement is legitimate; resolving it in one direction without saying so is not. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000011",
+       "title": "Response rates after first-line failure",
+       "journal": "Review of Invented Medicine",
+       "year": "2015",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited as the opposing result — it is why this point cannot be stated as settled."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -7720,9 +9352,10 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000018; PMID 00000019"
+     "confidence": "low",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "PMID 00000012",
+     "resolved": []
     }
    }
   },
@@ -7746,7 +9379,18 @@
      "verdict": "population",
      "confidence": "high",
      "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": "PMID 00000025"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000017",
+       "title": "Dose-finding in a community setting",
+       "journal": "J. Sample Oncology",
+       "year": "2025",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -7828,9 +9472,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "medium",
+     "confidence": "high",
      "why": "Narrative rather than claim. No source is required and none is missing.",
-     "source": ""
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -7869,8 +9514,9 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "low",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": "PMID 00000025"
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "PMID 00000016",
+     "resolved": []
     }
    }
   },
@@ -8032,9 +9678,20 @@
    "engines": {
     "codex": {
      "verdict": "preclinical",
-     "confidence": "high",
-     "why": "This describes laboratory work in language usually reserved for clinical findings. The result may be real and still not mean what a reader will take it to mean. Label the stage. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": "PMID 00000018; PMID 00000014"
+     "confidence": "low",
+     "why": "Stage is unmarked. Everything in the sentence is consistent with the source, but the source is early-stage and the sentence reads as settled. This names a product, so the sentence carries commercial weight whether or not it intends to.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000002",
+       "title": "Outcomes after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2022",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "harms at the dose range the sentence mentions",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    }
   },
@@ -8117,8 +9774,19 @@
     "codex": {
      "verdict": "preclinical",
      "confidence": "low",
-     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it.",
-     "source": "NCT00000014"
+     "why": "The evidence behind this is preclinical and the sentence does not say so. A reader has no way to tell from the text that this has not been shown in people, and the phrasing does not signal it. Regulatory status changes by jurisdiction and over time, so an unqualified statement here dates badly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000012",
+       "title": "Mechanistic evaluation in an unselected population",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2010",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited to show the stage of the evidence: this is where the claim originates, and it is not a human study."
+      }
+     ]
     }
    }
   },
@@ -8142,7 +9810,27 @@
      "verdict": "source",
      "confidence": "medium",
      "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference.",
-     "source": "PMID 00000001"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000004",
+       "title": "Response rates after first-line failure",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2011",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      },
+      {
+       "pmid": "00000011",
+       "title": "Dose-finding across three centres",
+       "journal": "J. Sample Oncology",
+       "year": "2019",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     }
    }
   },
@@ -8209,14 +9897,35 @@
     "codex": {
      "verdict": "notclaim",
      "confidence": "medium",
-     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": ""
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": "",
+     "resolved": []
     },
     "grok": {
      "verdict": "population",
-     "confidence": "low",
+     "confidence": "high",
      "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "NCT00000011"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Comparative effectiveness in a community setting",
+       "journal": "Review of Invented Medicine",
+       "year": "2010",
+       "design": "Cohort study — observational, so association rather than cause",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      },
+      {
+       "pmid": "00000010",
+       "title": "Dose-finding in previously treated patients",
+       "journal": "J. Sample Oncology",
+       "year": "2019",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -8239,9 +9948,20 @@
    "engines": {
     "codex": {
      "verdict": "misleading",
-     "confidence": "medium",
-     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": ""
+     "confidence": "low",
+     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000008",
+       "title": "Mechanistic evaluation in previously treated patients",
+       "journal": "Review of Invented Medicine",
+       "year": "2021",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -8303,9 +10023,10 @@
    "engines": {
     "codex": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "Narrative rather than claim. No source is required and none is missing.",
-     "source": ""
+     "confidence": "low",
+     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
+     "source": "",
+     "resolved": []
     }
    }
   },
@@ -8357,13 +10078,25 @@
      "verdict": "population",
      "confidence": "high",
      "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
-     "source": "PMID 00000006"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000010",
+       "title": "Response rates at standard dosing",
+       "journal": "Demo Clinical Research",
+       "year": "2009",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "an association that did not survive adjustment for confounders",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     },
     "grok": {
      "verdict": "notclaim",
-     "confidence": "high",
-     "why": "Nothing here to verify. The sentence sets up the paragraph rather than asserting anything about the world.",
-     "source": ""
+     "confidence": "low",
+     "why": "This is not a factual claim. It is a transition and carries no assertion to check. Flagged only because it sits next to a sentence that does.",
+     "source": "",
+     "resolved": []
     }
    },
    "engines_split": true
@@ -8479,8 +10212,19 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "high",
-     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
-     "source": "PMID 00000001; PMID 00000003"
+     "why": "The sentence is true and the impression it leaves is not. Reordering it, or moving the qualifier out of the subordinate clause, would resolve it.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000011",
+       "title": "Mechanistic evaluation in a community setting",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2024",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -8530,9 +10274,20 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "medium",
-     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them.",
-     "source": "PMID 00000011"
+     "confidence": "high",
+     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000006",
+       "title": "Response rates in previously treated patients",
+       "journal": "Demo Clinical Research",
+       "year": "2025",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "improvement on a surrogate marker, with no outcome data",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
@@ -8582,15 +10337,46 @@
    "engines": {
     "codex": {
      "verdict": "source",
-     "confidence": "low",
-     "why": "No source is offered for the specific quantity. The general claim around it is supportable, but the number is the part a reader will remember and repeat, and it is the part with nothing behind it.",
-     "source": "PMID 00000010"
+     "confidence": "high",
+     "why": "The sentence cites nothing. That may be fine in a passage that is clearly framed as background, but this one reads as a finding, and a finding needs a reference. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000001",
+       "title": "Long-term follow-up at standard dosing",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2023",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      },
+      {
+       "pmid": "00000014",
+       "title": "Tolerability at standard dosing",
+       "journal": "Demo Clinical Research",
+       "year": "2018",
+       "design": "Systematic review — pooled across the published trials",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "The closest published estimate to the figure in the sentence — offered as the citation the sentence is missing, not as confirmation the figure is right."
+      }
+     ]
     },
     "grok": {
      "verdict": "population",
-     "confidence": "high",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
-     "source": "PMID 00000021"
+     "confidence": "medium",
+     "why": "The sentence generalises past its evidence. What was observed in a defined cohort is stated here as though it holds broadly. The distinction matters most to exactly the reader who is deciding whether it applies to them. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000022",
+       "title": "Comparative effectiveness after first-line failure",
+       "journal": "Review of Invented Medicine",
+       "year": "2016",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "an effect in the direction the sentence describes, with wide confidence intervals",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    },
    "engines_split": true
@@ -8615,7 +10401,8 @@
      "verdict": "disputed",
      "confidence": "high",
      "why": "Sources conflict on this point. The sentence picks a side silently. A reader cannot tell that an alternative reading exists, which is the part that needs fixing. Patient outcomes are the claims a reader is most likely to repeat to their own clinician.",
-     "source": "PMID 00000019"
+     "source": "NCT00000021",
+     "resolved": []
     }
    }
   },
@@ -8638,8 +10425,28 @@
     "codex": {
      "verdict": "misleading",
      "confidence": "medium",
-     "why": "Literally accurate, directionally wrong. The framing invites a conclusion the evidence does not reach, and a reader will take the conclusion rather than the qualifier. This names a product, so the sentence carries commercial weight whether or not it intends to.",
-     "source": ""
+     "why": "Each clause is defensible and the sentence as a whole is not. Placing them together implies a causal link that neither half establishes. This is the failure mode worth catching, because nothing in it is technically false.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Dose-finding across three centres",
+       "journal": "Synthetic Trials Quarterly",
+       "year": "2022",
+       "design": "Laboratory study — cells or tissue, not people",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      },
+      {
+       "pmid": "00000007",
+       "title": "Response rates after first-line failure",
+       "journal": "Demo Clinical Research",
+       "year": "2025",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited because it reports the qualifier the sentence leaves out."
+      }
+     ]
     }
    }
   },
@@ -8663,7 +10470,27 @@
      "verdict": "ok",
      "confidence": "low",
      "why": "This is carefully hedged. The verb does the work the evidence can carry, and the sentence stops before the point where it would need a number to stand up.",
-     "source": "PMID 00000017"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000007",
+       "title": "Outcomes in older adults",
+       "journal": "Review of Invented Medicine",
+       "year": "2017",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "no difference between the groups on the primary outcome",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      },
+      {
+       "pmid": "00000015",
+       "title": "Mechanistic evaluation in an unselected population",
+       "journal": "Review of Invented Medicine",
+       "year": "2024",
+       "design": "Case series — a small number of patients, no comparison group",
+       "shows": "the mechanism the sentence assumes, but only in cell culture",
+       "why": "Cited as the direct support for the claim. Scope and population match."
+      }
+     ]
     }
    }
   },
@@ -8715,7 +10542,18 @@
      "verdict": "rewrite",
      "confidence": "high",
      "why": "Several issues at once: unattributed quantity, scope broader than the source, and a verb stronger than the evidence. Fixing them one at a time will produce an awkward sentence; recasting it will not. Phrased as guidance, which shifts it from description to recommendation.",
-     "source": "NCT00000025"
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000025",
+       "title": "Comparative effectiveness in a community setting",
+       "journal": "Journal of Placeholder Studies",
+       "year": "2023",
+       "design": "Randomised controlled trial — the strongest single design here",
+       "shows": "a benefit confined to the subgroup that had already failed first-line treatment",
+       "why": "Cited to show the gap between what the source supports and what the sentence says."
+      }
+     ]
     }
    }
   },
@@ -8765,9 +10603,20 @@
    "engines": {
     "codex": {
      "verdict": "population",
-     "confidence": "low",
-     "why": "The work behind this looked at a narrower group than the sentence implies. Written this way a reader applies it to themselves regardless of whether they resemble the people studied. Naming the group would fix it without weakening the point.",
-     "source": ""
+     "confidence": "medium",
+     "why": "Scope mismatch between claim and source. The underlying population is specific; the sentence is not. Adding the qualifier costs six words. Because this is a dose, the tolerance for imprecision is lower than elsewhere in the chapter -- a reader may act on it directly.",
+     "source": "",
+     "resolved": [
+      {
+       "pmid": "00000003",
+       "title": "Comparative effectiveness in older adults",
+       "journal": "Demo Clinical Research",
+       "year": "2018",
+       "design": "Animal study — not yet shown in humans",
+       "shows": "a smaller effect than earlier reports, which the authors attribute to blinding",
+       "why": "Cited because it defines the population the finding actually came from, which is narrower than the sentence implies."
+      }
+     ]
     }
    }
   },
