@@ -628,7 +628,7 @@ function render(){
         <h4>AI review<span class="sum">${engSummary(c)}</span></h4>
         ${synthesise(c)}
         <details class="engdet"><summary>Show the detailed review<span class="engdetnote">— which system said what, confidence, and the raw references</span></summary>
-        ${Object.entries(c.engines).map(([name,e]) => `<div class="ai">
+        ${Object.entries(usableEngines(c)).map(([name,e]) => `<div class="ai">
           <div class="hd">
             <span class="aichip">AI · ${esc(name)}</span>
             <span class="vd">Suggests: ${esc(VERDICT_LABEL[e.verdict]||e.verdict)}</span>
